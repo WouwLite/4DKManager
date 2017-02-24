@@ -29,12 +29,18 @@
                     @endif
                 </div>
                 <div class="form-group has-feedback {{ $errors->has('function') ? 'has-error' : '' }}">
-                    <input type="text" name="function" class="form-control" value="{{ old('function') }}"
-                           placeholder="Wat is uw functie?">
-                    Form::select('animal',[
-                    'Cats' => ['leopard' => 'Leopard'],
-                    'Dogs' => ['spaniel' => 'Spaniel'],
-                    ]);
+                    <select name="function" class="form-control" value="{{ old('function') }}" placeholder="Wat is uw functie?">
+                        <option value="bezoeker">Bezoeker</option>
+                        <option value="loper" selected>Loper</option>
+                        <option value="externe-loper">Externe loper</option>
+                        <option value="ondersteuner">Ondersteuner</option>
+                        <option value="medewerker">Medewerker</option>
+                        <option value="kind-van-medewerker">Kind van medewerer</option>
+                        <option value="teamleider">Teamleider</option>
+                        <option value="organisatie">Organisatie</option>
+                        <option value="kernteam" disabled>Kernteam</option>
+                    </select>
+
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     @if ($errors->has('function'))
                         <span class="help-block">

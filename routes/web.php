@@ -17,6 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Error logging and bug tracking
+Route::group(['prefix' => 'debug'], function () {
+    Route::get('errors', function () {
+        return view('debug.errors');
+    });
+});
 
 Route::group(['prefix' => 'pages'], function () {
     Route::get('downloads', function () {
