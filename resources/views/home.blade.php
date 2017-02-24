@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Scoutroam')
+@section('title', '4DK Manager')
 
 @section('content_header')
     <ol class="breadcrumb">
@@ -53,5 +53,10 @@
             <option>Organisatie</option>
             <option>Kernteam</option>
         </select>
+    </div>
+
+    <div class="container-fluid">
+        <p>Function Test Environment (FTE)</p>
+        {{--<p>{{ View::client()->name }}</p>--}}
     </div>
 @stop
