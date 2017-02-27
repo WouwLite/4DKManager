@@ -14,29 +14,28 @@
 @section('content')
     @if(Auth::user()->admin === 1)
         <div class="container-fluid table-bordered">
-            {{-- START BUG TEMPLATE --}}
-            <div class="col-sm-12">
-                <h2>Bug #1 - Registration without usercode, view generation error</h2>
-                <p>
-                    When creating a new account, the value of 'Code' remains empty (can be NULL).<br>
-                    Issue: home.blade.php doesn't load when value is NULL. This is because the QR code cannot generate NULL.
-                </p>
-            </div>
-            <div class="col-sm-2">
-                <h3>Status</h3>
-                <p>
-                    <span class="label label-danger">Unsolved</span>
-                    {{--<span class="label label-warning">Testing</span>--}}
-                    {{--<span class="label label-success">Solved</span>--}}
-                </p>
-            </div>
-            <div class="col-sm-10">
-                <h3>Solution</h3>
-                <p>
-                    Create random number generator with yearly prefix (2017xxxx)
-                </p>
-            </div>
-            {{-- END BUG TEMPLATE --}}
+            @foreach($errors as $error)
+                    <div class="col-sm-12">
+                        @if($error->status === 3)
+                            <h2><span class="label label-danger">Closed</span> Bug #{{ $error->id }} - {{ $error->title }}</h2>
+                        @else
+                            <h2><span class="label label-success">Open</span> Bug #{{ $error->id }} - {{ $error->title }}</h2>
+                        @endif
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-11">
+                        <p>
+                            {{ $error->body }}
+                        </p>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-11">
+                        <h3>Solution</h3>
+                        <p>
+                            {{ $error->solution }}
+                        </p>
+                    </div>
+            @endforeach
         </div>
     @else
         <div class="container-fluid">

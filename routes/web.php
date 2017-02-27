@@ -20,8 +20,15 @@ Route::get('/', function () {
 // Error logging and bug tracking
 Route::group(['prefix' => 'debug'], function () {
     Route::get('errors', function () {
-        return view('debug.errors');
+        $errors = \App\Error::all();
+        return view('debug.errors', compact('errors'));
     });
+});
+
+Route::group(['prefix' => 'admin'], function () {
+   Route::get('users', function () {
+        return view('admin.users');
+   });
 });
 
 Route::group(['prefix' => 'pages'], function () {
@@ -55,6 +62,7 @@ Auth::routes();
 // Controllers
 
 Route::get('home', 'HomeController@index');
+
 Route::group(['prefix' => 'dashboard'], function () {
     Route::group(['prefix' => 'clients'], function () {
         Route::get('overview', 'ClientController@index');

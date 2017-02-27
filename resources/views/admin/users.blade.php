@@ -17,26 +17,28 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Code</th>
                     <th>Naam</th>
                     <th>Functie</th>
-                    <th>Tentnr</th>
-                    <th>Vak</th>
+                    <th>Email</th>
+                    <th>Admin</th>
                     <th></th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($clients as $client)
-                <tr>
-                    <td>{{ $client->code }}</td>
-                    <td>{{ $client->name }}</td>
-                    <td>{{ $client->function }}</td>
-                    <td>{{ $client->tent }}</td>
-                    <td>{{ $client->field }}</td>
-                    <td>
-                        <button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-primary"><i class="fa fa-wrench" aria-hidden="true"></i></button> <button type="button" class="btn btn-danger disabled"><i class="fa fa-ban" aria-hidden="true"></i></button>
-                    </td>
-                </tr>
+                @foreach($user as $users)
+                    <tr>
+                        <td>{{ $users->id }}</td>
+                        {{--<td>{{ Auth::user()->code }}</td>--}}
+                        {{--<td>{{ Auth::user()->name }}</td>--}}
+                        {{--<td>{{ Auth::user()->function }}</td>--}}
+                        {{--<td>{{ Auth::user()->email }}</td>--}}
+                        {{--<td>{{ Auth::user()->admin }}</td>--}}
+                        <td>
+                            <button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-primary"><i class="fa fa-wrench" aria-hidden="true"></i></button> <button type="button" class="btn btn-danger disabled"><i class="fa fa-ban" aria-hidden="true"></i></button>
+                        </td>
+                    </tr>
                 @endforeach
                 </tbody>
             </table>

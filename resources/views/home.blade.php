@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col-sm-2">
                 {!! QrCode::size(150)->generate(Auth::user()->id) !!}<br>
-                QR waarde: {{ Auth::user()->id}}<br>
+                QR waarde: {{ Auth::user()->id }}<br>
             </div>
             <div class="col-sm-3">
                 Je ID is: <br>
