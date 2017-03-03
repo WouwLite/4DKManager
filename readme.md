@@ -1,7 +1,9 @@
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://img.shields.io/travis/komcommy/4DKManager.svg" alt="Build Status"></a>
+<img src="https://img.shields.io/travis/komcommy/4DKManager.svg" alt="Build Status"></a>
+<img src="https://img.shields.io/badge/version-beta.1709.04-yellow.svg" alt="Version"></a>
+<img src="https://img.shields.io/badge/modules-2-yellowgreen.svg" alt="Modules Present"></a>
 </p>
 
 ## Over 4DKManager
