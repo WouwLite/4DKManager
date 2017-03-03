@@ -14,14 +14,15 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->integer('function')->default(0); // 0 = normal, 1 = employee, 2 = teamleader, etc
-            $table->integer('admin')->default(0); // 0 = default, 1 = admin
-            $table->rememberToken();
-            $table->timestamps();
+            $table->increments('id');                   // Unique ID, Primary Key, don't touch!
+            $table->integer('code');                    // Client Code, i.e.: 20171234
+            $table->string('name');                     // User realname
+            $table->string('email')->unique();          // User email, must be unique in system
+            $table->string('password');                 // User password
+            $table->string('function');                 // Client function
+            $table->integer('admin')->default(0);       // 0 = default, 1 = admin
+            $table->rememberToken();                    // Special string for password recovery, don't touch!
+            $table->timestamps();                       // Laravel TimeStamps, don't touch!
         });
     }
 

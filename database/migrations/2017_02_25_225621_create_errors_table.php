@@ -14,12 +14,12 @@ class CreateErrorsTable extends Migration
     public function up()
     {
         Schema::create('errors', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title');
-            $table->string('body');
-            $table->integer('status');
-            $table->string('solution');
-            $table->timestamps();
+            $table->increments('id');       // Unique ID, Primary Key, don't touch!
+            $table->string('title');        // Ticket title
+            $table->string('body');         // Ticket body
+            $table->integer('status');      // Ticket status
+            $table->string('solution');     // Ticket solution
+            $table->timestamps();           // Laravel TimeStamps, don't touch!
         });
     }
 

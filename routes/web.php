@@ -45,6 +45,16 @@ Route::group(['prefix' => 'pages'], function () {
     });
 });
 
+Route::group(['prefix' => 'IT'], function () {
+    Route::get('dashboard', function () {
+        return view('IT.index');
+    });
+
+    Route::get('NOC', function () {
+        return view('IT.noc');
+    });
+});
+
 // Administration pages
 
 // Dynamic pages

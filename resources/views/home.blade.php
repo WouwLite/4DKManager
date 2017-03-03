@@ -19,7 +19,8 @@
                 <strong>Admin Quicklinks</strong>
                 <ol>
                     <li><a href="/debug/errors">Errorlog / Bugs</a></li>
-                    <li><a href="X">X</a></li>
+                    <li><a href="/IT/dashboard">IT Dashboard</a></li>
+                    <li><a href="/IT/NOC">Network Operations Center</a></li>
                 </ol>
                 <p>Admin Interface is shown when function is "beheerder" and admin is "1".</p>
             </div><br>
@@ -45,13 +46,13 @@
             <div class="col-sm-7">
                 <span class="label label-default">{{ Auth::user()->id }}</span><br>
                 <span class="label label-default">{{ Auth::user()->code }}</span><br>
-                <span class="label label-default">{{ Auth::user()->email }}</span><br>
+                <span class="label label-default">hidden</span><br>
                 <span class="label label-default">{{ Auth::user()->function }}</span><br>
             </div>
         </div>
     </div>
 
-    <img src="http://cdn.wouwlite.eu/4dk.nl/images/4dkCodeExampleHome.png" alt="Code Example" width="80%">
+    {{--<img src="http://cdn.wouwlite.eu/4dk.nl/images/4dkCodeExampleHome.png" alt="Code Example" width="80%">--}}
 
     <div class="container-fluid hidden">
         <p>Functies</p>
@@ -67,9 +68,12 @@
             <option>Kernteam</option>
         </select>
     </div>
-
+    <br><br>
     <div class="container-fluid">
-        <p>Function Test Environment (FTE)</p>
-        {{--<p>{{ View::client()->name }}</p>--}}
+        <h2>Function Test Environment (FTE)</h2>
+        <h3>Client overview test with foreach-loop</h3>
+        <p>
+            Doesn't work here!
+        </p>
     </div>
 @stop
