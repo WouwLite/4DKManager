@@ -11,10 +11,6 @@
 4DKM is een web applicatie gebouwd op PHP Laravel 5.4 ten behoeven van het Scouting 4Daagsekamp te Nijmegen.
 De applicatie wordt ontworpen vanuit een modulair oogpunt, kortom, geschikt voor meerdere doeleinden.
 
-## Configuratie
-
-*binnenkort meer*
-
 ## Bijdragen
 
 Het wordt extreem op prijs gesteld als u een bedrijge wilt en kunt leveren.
@@ -30,76 +26,87 @@ De 4DKManager heeft momenteel nog geen licentie. Zodra de code toepasbaar is zul
 
 
 -----------
-# Easy CKEditor integration with Laravel 5
 
-[![Build Status](https://travis-ci.org/jeroennoten/laravel-ckeditor.svg?branch=master)](https://travis-ci.org/jeroennoten/laravel-ckeditor)
+## Installation (via CLI)
 
-This package provides an easy way to set up [CKEditor](http://ckeditor.com/) with Laravel 5.
-I think CKEditor is the best free WYSIWYG editors available.
-This package makes it super easy to use the editor with Laravel 5.
-It provides a custom blade directive `@ckeditor('textareaId')` to quickly integrate it in your forms.
-
-- [Installation](#installation)
-- [Updating](#updating)
-- [Usage](#usage)
-- [Configuration](#configuration)
-
-## Installation
-
-1. Require the package using composer:
+1. Clone the Git repository:
 
     ```
-    composer require jeroennoten/laravel-ckeditor
+    git clone https://github.com/komcommy/4DKManager.git
     ```
 
-2. Add the service provider to the `providers` in `config/app.php`:
+2. Create a database in `MySQL`:
 
-    ```php
-    JeroenNoten\LaravelCkEditor\ServiceProvider::class,
+    ```sql
+    CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
+    GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';
+    FLUSH PRIVILEGES;
     ```
 
-3. Publish the public assets:
+3. Create authentication files:
 
     ```
-    php artisan vendor:publish --tag=ckeditor-assets
+    php artisan make:auth
+    ```
+    
+4. Migrate database tables:
+
+    ```
+    php artisan migrate
     ```
 
 ## Updating
 
-1. To update this package, first update the composer package:
-
-    ```
-    composer update jeroennoten/laravel-ckeditor
-    ```
-
-2. Then, publish the public assets with the `--force` flag to overwrite existing files
-
-    ```
-    php artisan vendor:publish --tag=ckeditor-assets --force
-    ```
+Automated updates are not supported yet, use the current Git release:
 
 ## Usage
 
-The package provides a custom blade directive `@ckeditor('textareaId')` that transforms a `<textarea>` into a CkEditor instance.
-Give your `<textarea>` an `id` attribute and add the blade directive at the bottom of your page, with the identifier of the `<textarea>`.
-
-Example:
+More to follow soon!
 
 ```html
-<textarea id="bodyField"></textarea>
-
-@ckeditor('bodyField')
+<html>
+    <body>
+        <h1>Sample HTML</h1>
+        <p>Sample HTML text</p>
+    </body>
+</html>
 ```
 
 ## Configuration
 
-If you need to configure the CkEditor instance, you can do that by passing a second argument with all options into the blade directive.
-Refer to the [CkEditor config documentation](http://docs.ckeditor.com/#!/api/CKEDITOR.config) to discover all possible options.
+To configure the app, create a .env file (if not present yet).
 
-Example: 
+```
+APP_ENV=local
+APP_KEY=
+APP_DEBUG=true
+APP_LOG_LEVEL=debug
+APP_URL=http://localhost
 
-```html
-<textarea id="bodyField"></textarea>
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
 
-@ckeditor('bodyField', ['height' => 500])
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+SESSION_DRIVER=file
+QUEUE_DRIVER=sync
+
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+MAIL_DRIVER=smtp
+MAIL_HOST=mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
 ```
