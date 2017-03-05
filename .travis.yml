@@ -1,13 +1,12 @@
 language: php
 
-php:
-  - 7.0
-  - 7.1
+script: phpunit --configuration phpunit.xml
 
-env:
-  global:
-    - setup=basic
+php:
+  - 7.1.1
+
+#env:
+#  global:
+#    - setup=basic
 
 sudo: false
-
-script: phpunit --configuration phpunit.xml
