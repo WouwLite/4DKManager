@@ -9,3 +9,5 @@ env:
     - setup=basic
 
 sudo: false
+
+script: phpunit --configuration phpunit.xml
