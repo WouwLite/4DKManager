@@ -1,4 +1,4 @@
-<p align="center"><img src="https://securehub.eu/4dk-nl/images/Scouting_NL_logo_RGB_transparanteachtergrond.png" height="150px"></p>
+<p align="center"><img src="https://securehub.eu/4dk-nl/images/SN_4DK_tweeluik.png" height="150px"></p>
 
 <p align="center">
 <a href="https://laravel.com"><img src="https://img.shields.io/badge/laravel-5.4-blue.svg" alt="Laravel Version"></a>
@@ -6,22 +6,26 @@
 <a href="#"><img src="https://img.shields.io/badge/modules-2-yellowgreen.svg" alt="Modules Present"></a>
 </p>
 
-## Over 4DKManager
+## Over het Scouting Vierdaagsekamp
 
-4DKM is een web applicatie gebouwd op PHP Laravel 5.4 ten behoeven van het Scouting 4Daagsekamp te Nijmegen.
-De applicatie wordt ontworpen vanuit een modulair oogpunt, kortom, geschikt voor meerdere doeleinden.
+Tijdens dit kamp begeleiden we je zoveel mogelijk om de zware taak van 30, 40 of 50 km per dag te volbrengen. Er is medische verzorging, op het kampterrein en op de verschillende scouting-posten op de route. Maar wat dacht je van de recreatieruimte waar je na het lopen lekker kunt uitrusten onder het genot van een hapje en een drankje. 
+En koken hoeft ook niet meer, dat doen wij voor je! Zo zijn er nog een aantal dingen! 
+In iedere geval kun je je scouting-contacten weer op peil brengen. Misschien wel met scouts uit het buitenland! 's Nacht overnacht je in de bosrijke en rustige omgeving in het oosten van Nijmegen. Je bent als individuele loper welkom maar ook in groepsverband. 
+Je kunt tijdens de week voor je zelf zorgen maar je kunt ook gebruik maken van, de wekdienst (voor als je je denkt te verslapen) en de kamprestauratie.
 
 ## Bijdragen
 
-Het wordt extreem op prijs gesteld als u een bedrijge wilt en kunt leveren.
+De 4DaagseKamp Manager (4DKM) is een webapplicatie gebouwd op het populaire PHP framework Laravel (versie 5.4). Door het gebruik van een veelzijdig en eenvoudig te begrijpen framework kunnen programmeurs snel en eenvoudig aanpassingen doen of zelfs nieuwe modules toevoegen. De 4DKM is een modulair platform en een bouwen van een module zal binnenkort worden opgenomen in de documentatie.
+
+Hulp is altijd welkom, dus heb je technisch inzicht en denk je een bijdrage te kunnen leveren? Clone deze repository en ga lekker aan de slag!
 
 ## Privacy en beveiliging
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+Privacy en veiligheid staat hoog in het vaandel en er wordt bij elke implementatie getest of de veiligheid en privacy niet in het geding komt. Heb je een issue gevonden, meld het direct via privacy@4dk.nl.
 
 ## License
 
-De 4DKManager heeft momenteel nog geen licentie. Zodra de code toepasbaar is zullen wij een licentie toevoegen. Geen zorgen, het is geen closed-source project!
+De 4DKManager heeft momenteel nog geen licentie. Zodra de code toepasbaar is zullen wij een licentie toevoegen. Geen zorgen, het is géén closed-source project! Het doel is om de code toegankelijk en modulair te maken zodat ook andere Scoutinggroepen er gebruik van kunnen maken.
 
 
 
