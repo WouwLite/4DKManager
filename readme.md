@@ -2,6 +2,7 @@
 
 <p align="center">
 <a href="https://laravel.com"><img src="https://img.shields.io/badge/laravel-5.4-blue.svg" alt="Laravel Version"></a>
+<a href="#"><img src="https://img.shields.io/badge/version-0.1-blue.svg" alt="Version"></a>
 <a href="#"><img src="https://img.shields.io/badge/status-development-yellow.svg" alt="Status"></a>
 <a href="#"><img src="https://img.shields.io/badge/modules-2-yellowgreen.svg" alt="Modules Present"></a>
 </p>
@@ -31,7 +32,7 @@ De 4DKManager heeft momenteel nog geen licentie. Zodra de code toepasbaar is zul
 
 -----------
 
-## Installation (via CLI)
+## Installation (via Command Line Interface)
 
 1. Clone the Git repository:
 
@@ -41,40 +42,48 @@ De 4DKManager heeft momenteel nog geen licentie. Zodra de code toepasbaar is zul
 
 2. Create a database in `MySQL`:
 
-    ```sql
-    CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
-    GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';
-    FLUSH PRIVILEGES;
+    ```
+    Host: localhost
+    Database: 4dkm_db
+    Username: 4dkm_user
+    Password: p@ssw0rd
     ```
 
-3. Create authentication files:
-
-    ```
-    php artisan make:auth
-    ```
-    
-4. Migrate database tables:
+3. Create database migration:
 
     ```
     php artisan migrate
     ```
+    
+4. Create useraccount and grand admin rights:
+
+    Go to http://localhost/register
+    After registration, change database values for your account
+    ```
+    Function: "beheerder"
+    Admin: "1"
+    ```
 
 ## Updating
 
-Automated updates are not supported yet, use the current Git release:
+Automated updates are not supported yet, follow the documentation when upgrading!
 
 ## Usage
 
-More to follow soon!
+Visit the homepage via http://localhost/
 
-```html
-<html>
-    <body>
-        <h1>Sample HTML</h1>
-        <p>Sample HTML text</p>
-    </body>
-</html>
-```
+Views / pages are found in:
+    ```
+    - resources
+    - - views
+    - - - IT (CRUD IT manager)
+    - - - admin (admin pages)
+    - - - auth (login and registration pages)
+    - - - clients (CRUD client manager)
+    - - - debug (only for debugging purposes)
+    - - - mealmanager (all mealmanager pages)
+    - - - pages (generic pages)
+    ```
 
 ## Configuration
 
