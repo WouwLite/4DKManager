@@ -1,8 +1,8 @@
 <p align="center"><img src="https://securehub.eu/4dk-nl/images/Scouting_NL_logo_RGB_transparanteachtergrond.png" height="150px"></p>
 
 <p align="center">
-<a href="https://travis-ci.org/komcommy/4DKManager"><img src="https://img.shields.io/travis/komcommy/4DKManager.svg" alt="Build Status"></a>
-<a href="#"><img src="https://img.shields.io/badge/version-beta.1709.04-yellow.svg" alt="Version"></a>
+<a href="https://laravel.com"><img src="https://img.shields.io/badge/laravel-5.4-blue.svg" alt="Laravel Version"></a>
+<a href="#"><img src="https://img.shields.io/badge/status-development-yellow.svg" alt="Status"></a>
 <a href="#"><img src="https://img.shields.io/badge/modules-2-yellowgreen.svg" alt="Modules Present"></a>
 </p>
 
