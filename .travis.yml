@@ -1,6 +1,0 @@
-language: php
-
-script: phpunit --configuration phpunit.xml
-
-php:
-  - 7.1.1

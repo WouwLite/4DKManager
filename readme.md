@@ -20,6 +20,23 @@ De 4DaagseKamp Manager (4DKM) is een webapplicatie gebouwd op het populaire PHP 
 
 Hulp is altijd welkom, dus heb je technisch inzicht en denk je een bijdrage te kunnen leveren? Clone deze repository en ga lekker aan de slag!
 
+Hoe?
+
+1. Fork it
+2. Create your feature branch: 
+    ```
+    git checkout -b my-new-feature
+    ```
+3. Commit your changes: 
+    ```
+    git commit -am 'Add some feature'
+    ```
+4. Push to the branch: 
+    ```
+    git push origin my-new-feature
+    ```
+5. Submit a pull request
+
 ## Privacy en beveiliging
 
 Privacy en veiligheid staat hoog in het vaandel en er wordt bij elke implementatie getest of de veiligheid en privacy niet in het geding komt. Heb je een issue gevonden, meld het direct via privacy@4dk.nl.
