@@ -1,26 +1,28 @@
 <p align="center"><img src="https://securehub.eu/4dk-nl/images/SN_4DK_tweeluik.png" height="150px"></p>
 
 <p align="center">
-<a href="https://laravel.com"><img src="https://img.shields.io/badge/laravel-5.4-blue.svg" alt="Laravel Version"></a>
-<a href="#"><img src="https://img.shields.io/badge/version-0.1-blue.svg" alt="Version"></a>
+<a href="https://laravel.com"><img src="https://img.shields.io/badge/laravel_version-5.4-blue.svg" alt="Laravel Version"></a>
+<a href="#"><img src="https://img.shields.io/badge/build-0.1-blue.svg" alt="Build"></a>
 <a href="#"><img src="https://img.shields.io/badge/status-development-yellow.svg" alt="Status"></a>
-<a href="#"><img src="https://img.shields.io/badge/modules-2-yellowgreen.svg" alt="Modules Present"></a>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="MIT License"></a>
 </p>
 
-## Over het Scouting Vierdaagsekamp
+## About the Scouting Four Day Camp
 
-Tijdens dit kamp begeleiden we je zoveel mogelijk om de zware taak van 30, 40 of 50 km per dag te volbrengen. Er is medische verzorging, op het kampterrein en op de verschillende scouting-posten op de route. Maar wat dacht je van de recreatieruimte waar je na het lopen lekker kunt uitrusten onder het genot van een hapje en een drankje. 
-En koken hoeft ook niet meer, dat doen wij voor je! Zo zijn er nog een aantal dingen! 
-In iedere geval kun je je scouting-contacten weer op peil brengen. Misschien wel met scouts uit het buitenland! 's Nacht overnacht je in de bosrijke en rustige omgeving in het oosten van Nijmegen. Je bent als individuele loper welkom maar ook in groepsverband. 
-Je kunt tijdens de week voor je zelf zorgen maar je kunt ook gebruik maken van, de wekdienst (voor als je je denkt te verslapen) en de kamprestauratie.
+If you participate in the 4-days walking event and you are a member of Scouts Netherlands, you will be hosted from the 15th until the 22th of July at the 31th Scouts 4-Days Camp. During this camp we will help you complete the challenging task of walking 30, 40 or 50 kilometres per day. Medical treatment will be available on the campsite, as well as on different scouts-posts on route. There will be a recreation room where you can relax after your walk, whilst enjoying some food or drinks.
+No need to cook either, we will do that for you! And it doesn't stop there!
+As always you can catch up on your scouts-contacts. Maybe even with scouts from abroad. You spend the night in the middle of quiet and forest filled surrounding in the eastern part of Nijmegen. Everyone is welcome, as an individual walker, or as part of a group.
+During the week you can take care of everything yourself, or use our services, for example a wake-up service (if you are afraid you won't wake up in time) and the camp restaurant.
 
-## Bijdragen
+The 4-Day Camp is located on the grounds of Scouts group Keizer Karel, at the Sophiaweg in Nijmegen.
+
+## Contribute
 
 De 4DaagseKamp Manager (4DKM) is een webapplicatie gebouwd op het populaire PHP framework Laravel (versie 5.4). Door het gebruik van een veelzijdig en eenvoudig te begrijpen framework kunnen programmeurs snel en eenvoudig aanpassingen doen of zelfs nieuwe modules toevoegen. De 4DKM is een modulair platform en een bouwen van een module zal binnenkort worden opgenomen in de documentatie.
 
 Hulp is altijd welkom, dus heb je technisch inzicht en denk je een bijdrage te kunnen leveren? Clone deze repository en ga lekker aan de slag!
 
-Hoe?
+How?
 
 1. Fork it
 2. Create your feature branch: 
@@ -37,19 +39,19 @@ Hoe?
     ```
 5. Submit a pull request
 
-## Privacy en beveiliging
+## Privacy and security
 
-Privacy en veiligheid staat hoog in het vaandel en er wordt bij elke implementatie getest of de veiligheid en privacy niet in het geding komt. Heb je een issue gevonden, meld het direct via privacy@4dk.nl.
+If you discover a security vulnerability within the 4DKManager, please send an e-mail to privacy@4dk.nl. All security vulnerabilities will be promptly addressed.
 
 ## License
 
-De 4DKManager heeft momenteel nog geen licentie. Zodra de code toepasbaar is zullen wij een licentie toevoegen. Geen zorgen, het is géén closed-source project! Het doel is om de code toegankelijk en modulair te maken zodat ook andere Scoutinggroepen er gebruik van kunnen maken.
+The 4DKManager is open-sourced software licensed under the <a href="https://opensource.org/licenses/MIT">MIT license</a>.
 
 
 
 -----------
 
-## Installation (via Command Line Interface)
+## Installation (through Command Line Interface)
 
 1. Clone the Git repository:
 
@@ -80,6 +82,7 @@ De 4DKManager heeft momenteel nog geen licentie. Zodra de code toepasbaar is zul
     Function: "beheerder"
     Admin: "1"
     ```
+    This feature will soon be integrated within the code to simplify actions. But for now, change the database data to become an awesome and sexy admin ;-).
 
 ## Updating
 
@@ -87,20 +90,24 @@ Automated updates are not supported yet, follow the documentation when upgrading
 
 ## Usage
 
-Visit the homepage via http://localhost/
+Once installed, visit the homepage on http://localhost.
+If you have any issues, run the following command in the Command Line Interface:
+    ```
+    composer update
+    ```
 
 Views / pages are found in:
-    ```
-    - resources
-    - - views
-    - - - IT (CRUD IT manager)
-    - - - admin (admin pages)
-    - - - auth (login and registration pages)
-    - - - clients (CRUD client manager)
-    - - - debug (only for debugging purposes)
-    - - - mealmanager (all mealmanager pages)
-    - - - pages (generic pages)
-    ```
+```    
+    /resources
+    /resources/views
+    /resources/IT (CRUD IT manager)
+    /resources/admin (admin pages)
+    /resources/auth (login and registration pages)
+    /resources/clients (CRUD client manager)
+    /resources/debug (only for debugging purposes)
+    /resources/mealmanager (all mealmanager pages)
+    /resources/pages (generic pages)
+```
 
 ## Configuration
 
