@@ -79,4 +79,8 @@ Route::group(['prefix' => 'dashboard'], function () {
         Route::get('show/{code}', 'ClientController@show');
         Route::get('create', 'ClientController@create');
     });
+    Route::group(['prefix' => 'mealmanager'], function() {
+        Route::get('overview', 'ClientController@indexmm');
+        Route::get('show/{code}', 'ClientController@show');
+    });
 });

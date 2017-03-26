@@ -71,9 +71,11 @@
     <br><br>
     <div class="container-fluid">
         <h2>Function Test Environment (FTE)</h2>
-        <h3>Client overview test with foreach-loop</h3>
+        <h3>Search function</h3>
         <p>
-            Doesn't work here!
+
+            Toevoegen: nieuws pagina, scouting-app nieuws api, CTEAM evaluatie blog ding
+
         </p>
     </div>
 @stop

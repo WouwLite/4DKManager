@@ -20,6 +20,14 @@ class ClientController extends Controller
         return view('clients.index', compact('clients'));
     }
 
+    public function indexmm()
+    {
+        $clients = Client::all();
+
+        return $clients;
+//        return view('mealmanager.indexmm', compact('clients'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
