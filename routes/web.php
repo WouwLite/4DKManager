@@ -43,6 +43,11 @@ Route::group(['prefix' => 'pages'], function () {
     Route::get('map', function () {
         return view('pages.eventmap');
     });
+
+    // Route to simple email signature page
+    Route::get('signature', function () {
+        return view('pages.signature');
+    });
 });
 
 Route::group(['prefix' => 'IT'], function () {
@@ -61,7 +66,7 @@ Route::group(['prefix' => 'IT'], function () {
 // TEST TEST TEST
 
 Route::get('user/{id}', function ($id) {
-    return 'Gebruiker ID: '.$id;
+    return 'Gebruiker ID: ' . $id . ' en naam is: DOESNT WORK - YET';
 });
 
 
@@ -74,11 +79,21 @@ Auth::routes();
 Route::get('home', 'HomeController@index');
 
 Route::group(['prefix' => 'dashboard'], function () {
+    // Add module Client Overview
     Route::group(['prefix' => 'clients'], function () {
         Route::get('overview', 'ClientController@index');
         Route::get('show/{code}', 'ClientController@show');
         Route::get('create', 'ClientController@create');
     });
+
+    Route::group(['prefix' => 'badges'], function () {
+        // Add route to print one ID badge
+        Route::get('printOne/{code}', 'BadgesController@printOne');
+        // Add route to print multiple ID badges
+        Route::get('printMultiple', 'BadgesController@printMultiple');
+    });
+
+    // Add module MealManager
     Route::group(['prefix' => 'mealmanager'], function() {
         Route::get('overview', 'ClientController@indexmm');
         Route::get('show/{code}', 'ClientController@show');

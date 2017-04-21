@@ -18,11 +18,11 @@ The 4-Day Camp is located on the grounds of Scouts group Keizer Karel, at the So
 
 ## Contribute
 
-De 4DaagseKamp Manager (4DKM) is een webapplicatie gebouwd op het populaire PHP framework Laravel (versie 5.4). Door het gebruik van een veelzijdig en eenvoudig te begrijpen framework kunnen programmeurs snel en eenvoudig aanpassingen doen of zelfs nieuwe modules toevoegen. De 4DKM is een modulair platform en een bouwen van een module zal binnenkort worden opgenomen in de documentatie.
+The 4DKManager is a webapplication built on the populair PHP framework Laravel 5.4. 
+By the use of a scalable and easy to understand framework, developers can make changes fairly easy and fast.
 
-Hulp is altijd welkom, dus heb je technisch inzicht en denk je een bijdrage te kunnen leveren? Clone deze repository en ga lekker aan de slag!
-
-How?
+We can always use help. So if you have technical knowledge and think you can participate in the development of this awesome
+webapplication? Fork and/or clone this repo and follow the steps below.
 
 1. Fork it
 2. Create your feature branch: 
@@ -41,7 +41,7 @@ How?
 
 ## Privacy and security
 
-If you discover a security vulnerability within the 4DKManager, please send an e-mail to privacy@4dk.nl. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within the 4DKManager, please send an e-mail to support@scoutroam.org. All security vulnerabilities will be promptly addressed.
 
 ## License
 
