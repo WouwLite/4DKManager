@@ -86,10 +86,9 @@ Route::group(['prefix' => 'dashboard'], function () {
         Route::get('create', 'ClientController@create');
     });
 
+    // Add route to print one or multiple ID badge
     Route::group(['prefix' => 'badges'], function () {
-        // Add route to print one ID badge
         Route::get('printOne/{code}', 'BadgesController@printOne');
-        // Add route to print multiple ID badges
         Route::get('printMultiple', 'BadgesController@printMultiple');
     });
 
@@ -97,5 +96,13 @@ Route::group(['prefix' => 'dashboard'], function () {
     Route::group(['prefix' => 'mealmanager'], function() {
         Route::get('overview', 'ClientController@indexmm');
         Route::get('show/{code}', 'ClientController@show');
+    });
+
+    Route::get('meals', function() {
+        $meals = App\Meal::all();
+        $client = App\Client::find($meals->client_id);
+        foreach($meals as $meal) {
+            echo $meal->id . " Op naam van: " . $client->name . "<br />";
+        }
     });
 });

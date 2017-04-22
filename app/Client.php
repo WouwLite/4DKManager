@@ -6,15 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
 {
-    protected $fillable = [
-        'code',
-        'name',
-        'function',
-        'mealPreFridayBreakfast',
-        'mealPreFridayLunch',
-        'mealPreFridayDiner',
-        'mealPreSaturdayBreakfast',
-        'mealPreSaturdayLunch',
-        'mealPreSaturdayDiner'
-    ];
+//    protected $fillable = [
+//        'code',
+//        'name',
+//        'function'
+//    ];
 }
