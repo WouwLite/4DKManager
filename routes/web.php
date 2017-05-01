@@ -31,6 +31,12 @@ Route::group(['prefix' => 'admin'], function () {
    });
 });
 
+Route::group(['prefix' => 'event'], function () {
+   Route::get('register', function () {
+      return view('pages.eventregister');
+   });
+});
+
 Route::group(['prefix' => 'pages'], function () {
     Route::get('downloads', function () {
         return view('pages.downloads');

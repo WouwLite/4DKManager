@@ -28,6 +28,15 @@
                         </span>
                     @endif
                 </div>
+                <div class="form-group has-feedback {{ $errors->has('code') ? 'has-error' : '' }}">
+                    <input type="text" name="code" class="form-control" value="{{ date("Y") . rand(1000,9999) }}" readonly>
+                    <span class="glyphicon glyphicon-qrcode form-control-feedback"></span>
+                    @if ($errors->has('code'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('code') }}</strong>
+                        </span>
+                    @endif
+                </div>
                 <div class="form-group has-feedback {{ $errors->has('function') ? 'has-error' : '' }}">
                     <select name="function" class="form-control" value="{{ old('function') }}" placeholder="Wat is uw functie?">
                         <option value="bezoeker">Bezoeker</option>
@@ -35,7 +44,7 @@
                         <option value="externe-loper">Externe loper</option>
                         <option value="ondersteuner">Ondersteuner</option>
                         <option value="medewerker">Medewerker</option>
-                        <option value="kind-van-medewerker">Kind van medewerer</option>
+                        <option value="kind-van-medewerker">Kind van medewerker</option>
                         <option value="teamleider">Teamleider</option>
                         <option value="organisatie">Organisatie</option>
                         <option value="kernteam" disabled>Kernteam</option>

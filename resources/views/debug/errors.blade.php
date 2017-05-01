@@ -17,9 +17,9 @@
             @foreach($errors as $error)
                     <div class="col-sm-12">
                         @if($error->status === 3)
-                            <h2><span class="label label-danger">Closed</span> Bug #{{ $error->id }} - {{ $error->title }}</h2>
+                            <h2><span class="label label-success">Solved</span> Bug #{{ $error->id }} - {{ $error->title }}</h2>
                         @else
-                            <h2><span class="label label-success">Open</span> Bug #{{ $error->id }} - {{ $error->title }}</h2>
+                            <h2><span class="label label-danger">Open</span> Bug #{{ $error->id }} - {{ $error->title }}</h2>
                         @endif
                     </div>
                     <div class="col-sm-1"></div>

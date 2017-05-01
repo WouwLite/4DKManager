@@ -13,6 +13,21 @@
 
 @section('content')
     @if(Auth::user()->admin === 1)
+        {{-- Add navbar --}}
+        {{--{{ Form::open(['route' => 'clients.index', 'method' => 'GET', 'class' => 'navbar-form navbar-right', 'role' => 'search']) }}--}}
+        <form action="" class="navbar-form navbar-right" role="search">
+            <div class="input-group">
+                <input type="text" name="search" id="search" class="form-control" placeholder="Search...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </span>
+            </div>
+        </form>
+        {{--{{ Form::close() }}--}}
+
+        {{-- Add table to show users --}}
         <div class="table-responsive">
             <table class="table table-striped">
                 <thead>
