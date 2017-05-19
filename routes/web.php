@@ -11,13 +11,16 @@
 |
 */
 
-// Generic pages
+// Homepage
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+//
 // Error logging and bug tracking
+//
+
 Route::group(['prefix' => 'debug'], function () {
     Route::get('errors', function () {
         $errors = \App\Error::all();
@@ -56,6 +59,10 @@ Route::group(['prefix' => 'pages'], function () {
     });
 });
 
+//
+// Administration pages
+//
+
 Route::group(['prefix' => 'IT'], function () {
     Route::get('dashboard', function () {
         return view('IT.index');
@@ -66,27 +73,22 @@ Route::group(['prefix' => 'IT'], function () {
     });
 });
 
-// Administration pages
-
-// Dynamic pages
-// TEST TEST TEST
-
-Route::get('user/{id}', function ($id) {
-    return 'Gebruiker ID: ' . $id . ' en naam is: DOESNT WORK - YET';
-});
-
-
+//
 // Middleware routing
+//
 
 Auth::routes();
 
+//
 // Controllers
+//
 
 Route::get('home', 'HomeController@index');
 
 Route::group(['prefix' => 'dashboard'], function () {
     // Add module Client Overview
     Route::group(['prefix' => 'clients'], function () {
+        Route::get('/', 'ClientController@index'); //To prevent certain issues.
         Route::get('overview', 'ClientController@index');
         Route::get('show/{code}', 'ClientController@show');
         Route::get('create', 'ClientController@create');
@@ -100,15 +102,8 @@ Route::group(['prefix' => 'dashboard'], function () {
 
     // Add module MealManager
     Route::group(['prefix' => 'mealmanager'], function() {
+        Route::get('/', 'ClientController@indexmm'); //To prevent certain issues.
         Route::get('overview', 'ClientController@indexmm');
         Route::get('show/{code}', 'ClientController@show');
-    });
-
-    Route::get('meals', function() {
-        $meals = App\Meal::all();
-        $client = App\Client::find($meals->client_id);
-        foreach($meals as $meal) {
-            echo $meal->id . " Op naam van: " . $client->name . "<br />";
-        }
     });
 });

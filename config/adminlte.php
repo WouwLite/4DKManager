@@ -148,25 +148,25 @@ return [
         'ADMINISTRATIE',
         [
             'text' => 'Overzicht deelnemers',
-            'url'  => 'admin/settings',
+            'url'  => 'dashboard/clients/overview',
             'icon' => 'user',
         ],
         [
             'text' => 'Maaltijden',
-            'url'  => 'admin/settings',
-            'icon' => 'lock',
+            'url'  => 'dashboard/meals/overview',
+            'icon' => 'cutlery',
         ],
         [
             'text' => 'Wekdienst',
-            'url'  => 'admin/settings',
-            'icon' => 'user',
+            'url'  => 'dashboard/night/wake-up',
+            'icon' => 'bed',
         ],
 
         // Managementfeatures to manage internal data.
         'BEHEER',
         [
             'text'       => 'Gebruikers',
-            'url'        => 'IT',
+            'url'        => 'IT/overview',
             'icon_color' => 'red',
         ],
         [
@@ -176,6 +176,7 @@ return [
         ],
         [
             'text'       => 'Information',
+            'url'        => 'IT/wiki',
             'icon_color' => 'aqua',
         ],
     ],
