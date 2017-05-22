@@ -13,7 +13,6 @@
 @section('content')
     <div class="container-fluid">
         <h1>Welkom {{ Auth::user()->name }}!</h1>
-        @if(Auth::user()->admin === 1 && Auth::user()->function === "beheerder")
             <style>
                 body{padding-top:30px;}
 
@@ -37,26 +36,19 @@
                                 <div class="col-sm-6 col-md-8">
                                     <h4>{{ Auth::user()->name }}</h4>
                                     <p>
-                                        <i class="glyphicon glyphicon-envelope"></i>{{ Auth::user()->email }}
+                                        <i class="fa fa-envelope" aria-hidden="true"></i> {{ Auth::user()->email }}
                                         <br />
-                                        <i class="glyphicon glyphicon-globe"></i>{{ Auth::user()->name }}
+                                        <i class="fa fa-users" aria-hidden="true"></i> <span class="badge badge-default">{{ Auth::user()->function }}</span>
                                         <br />
-                                        <i class="glyphicon glyphicon-gift"></i>{{ Auth::user()->name }}
+                                        @if(Auth::user()->admin === 1)
+                                            Je bent aangemeld als <span class="label label-warning"><strong>beheerder</strong></span>
+                                        @endif
                                     </p>
-                                    <!-- Split button -->
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-primary">
-                                            Social</button>
-                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                            <span class="caret"></span><span class="sr-only">Social</span>
-                                        </button>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Twitter</a></li>
-                                            <li><a href="https://plus.google.com/+Jquery2dotnet/posts">Google +</a></li>
-                                            <li><a href="https://www.facebook.com/jquery2dotnet">Facebook</a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="#">Github</a></li>
-                                        </ul>
+                                    <!-- Buttongroup -->
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <button type="button" class="btn btn-primary">Wekdienst</button>
+                                        <button type="button" class="btn btn-primary">Wakker melden</button>
+                                        <button type="button" class="btn btn-primary">Opgeven maaltijd</button>
                                     </div>
                                 </div>
                             </div>
@@ -68,8 +60,8 @@
 
 
 
-
-            <p>Je bent aangemeld als <span class="label label-warning"><strong>beheerder</strong></span></p>
+        @if(Auth::user()->admin === 1 && Auth::user()->function === "developer")
+            <p>Je bent aangemeld als <span class="label label-warning"><strong>developer</strong></span></p>
             <div class="container-fluid" style="background-color: navajowhite;">
                 <strong>Admin Quicklinks</strong>
                 <ol>
@@ -82,33 +74,36 @@
                     <li><a href="/dashboard/badges/printMultiple">Badge Template 3-1</a></li>
                 </ol>
                 <p>Admin Interface is shown when function is "beheerder" and admin is "1".</p>
-            </div><br>
-        @else
-            <p>Je bent aangemeld als <span class="label label-primary"><strong>{{ Auth::user()->function }}</strong></span></p>
-        @endif
-        <div class="row">
-            <div class="col-sm-2">
-                {!! QrCode::size(150)->generate(Auth::user()->code) !!}<br>
-                QR waarde: {{ Auth::user()->code }}<br>
             </div>
-            <div class="col-sm-3">
-                Je ID is: <br>
-                Je deelnemernummer is: <br>
-                Je emailadres is: <br>
-                Je functie is: <br>
-                <br>
-            </div>
-            <div class="col-sm-7">
-                <span class="label label-default">{{ Auth::user()->id }}</span><br>
-                <span class="label label-default">{{ Auth::user()->code }}</span><br>
-                <span class="label label-default">hidden</span><br>
-                <span class="label label-default">{{ Auth::user()->function }}</span><br>
+            <br>
+            <div class="row">
+                <div class="col-sm-2">
+                    {!! QrCode::size(150)->generate(Auth::user()->code) !!}<br>
+                    QR waarde: {{ Auth::user()->code }}<br>
+                </div>
+                <div class="col-sm-3">
+                    Je ID is: <br>
+                    Je deelnemernummer is: <br>
+                    Je emailadres is: <br>
+                    Je functie is: <br>
+                    <br>
+                </div>
+                <div class="col-sm-7">
+                    <span class="label label-default">{{ Auth::user()->id }}</span><br>
+                    <span class="label label-default">{{ Auth::user()->code }}</span><br>
+                    <span class="label label-default">hidden</span><br>
+                    <span class="label label-default">{{ Auth::user()->function }}</span><br>
+                </div>
             </div>
         </div>
-    </div>
-    <br><br>
-    <div class="container-fluid">
-        <h2>Function Test Environment (FTE)</h2>
-        <h3>Search function</h3>
-    </div>
+        <br><br>
+        <div class="container-fluid">
+            <h2>Function Test Environment (FTE)</h2>
+            <h3>Search function</h3>
+        </div>
+    @endif
 @stop
+
+<php if ?>
+    hier de html
+<php endif ?>
