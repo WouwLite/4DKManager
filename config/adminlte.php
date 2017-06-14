@@ -163,11 +163,16 @@ return [
         ],
 
         // Managementfeatures to manage internal data.
-        'BEHEER',
+        'ICT BEHEER',
         [
             'text'       => 'Gebruikers',
-            'url'        => 'IT/overview',
-            'icon_color' => 'red',
+            'url'        => 'IT/users/overview',
+            'icon'       => 'users',
+        ],
+        [
+            'text'      => 'IP Plan',
+            'url'       => 'IT/network/dashboard',
+            'icon'      => 'server',
         ],
         [
             'text'       => 'Network Operations Center',

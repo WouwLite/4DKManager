@@ -28,17 +28,29 @@ Route::group(['prefix' => 'debug'], function () {
     });
 });
 
+//
+// Admin page
+//
+
 Route::group(['prefix' => 'admin'], function () {
    Route::get('users', function () {
         return view('admin.users');
    });
 });
 
+//
+// Registration page
+//
+
 Route::group(['prefix' => 'event'], function () {
    Route::get('register', function () {
       return view('pages.eventregister');
    });
 });
+
+//
+// Generic pages
+//
 
 Route::group(['prefix' => 'pages'], function () {
     Route::get('downloads', function () {
@@ -64,7 +76,16 @@ Route::group(['prefix' => 'pages'], function () {
 //
 
 Route::group(['prefix' => 'IT'], function () {
-    Route::get('dashboard', function () {
+    // Add IT dashboard
+    Route::group(['prefix' => 'network'], function () {
+        Route::get('dashboard', 'NetworkController@index');
+        Route::get('show/{code}', 'NetworkController@show');
+        Route::get('create', 'NetworkController@create');
+    });
+
+
+
+    Route::get('old', function () {
         return view('IT.index');
     });
 
