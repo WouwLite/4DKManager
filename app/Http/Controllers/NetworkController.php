@@ -85,4 +85,39 @@ class NetworkController extends Controller
     {
         //
     }
+
+    /*
+     * Custom (static) pages
+     */
+    public function map_indoor()
+    {
+        $networks = Network::all();
+
+        return view('IT.map_indoor', compact('networks'));
+    }
+
+    public function map_outdoor()
+    {
+        $networks = Network::all();
+
+        return view('IT.map_outdoor', compact('networks'));
+    }
+
+    public function topology()
+    {
+        $networks = Network::all();
+
+        return view('IT.topology', compact('networks'));
+    }
+
+
+    /*
+     * Bring Your Own Device
+     */
+    public function BringYourOwnDevice()
+    {
+        $networks = Network::all();
+
+        return view('IT.byod', compact('networks'));
+    }
 }

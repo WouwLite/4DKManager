@@ -81,8 +81,14 @@ Route::group(['prefix' => 'IT'], function () {
         Route::get('dashboard', 'NetworkController@index');
         Route::get('show/{code}', 'NetworkController@show');
         Route::get('create', 'NetworkController@create');
-    });
+        Route::get('topology', 'NetworkController@topology');
+        Route::get('byod', 'NetworkController@BringYourOwnDevice');
 
+        Route::group(['prefix' => 'map'], function () {
+           Route::get('indoor', 'NetworkController@map_indoor');
+           Route::get('outdoor', 'NetworkController@map_outdoor');
+        });
+    });
 
 
     Route::get('old', function () {

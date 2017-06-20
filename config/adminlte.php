@@ -164,26 +164,27 @@ return [
 
         // Managementfeatures to manage internal data.
         'ICT BEHEER',
+//        [
+//            'text'       => 'Gebruikers',
+//            'url'        => 'IT/users/overview',
+//            'icon'       => 'users',
+//        ],
         [
-            'text'       => 'Gebruikers',
-            'url'        => 'IT/users/overview',
-            'icon'       => 'users',
+            'text'       => 'ICT',
+            'url'        => 'IT/network/dashboard',
+            'icon'       => 'server',
+            'icon_color' => 'red',
         ],
         [
-            'text'      => 'IP Plan',
-            'url'       => 'IT/network/dashboard',
-            'icon'      => 'server',
-        ],
-        [
-            'text'       => 'Network Operations Center',
+            'text'       => 'NOC Status',
             'url'        => 'IT/NOC',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'Information',
-            'url'        => 'IT/wiki',
             'icon_color' => 'aqua',
         ],
+//        [
+//            'text'       => 'Information',
+//            'url'        => 'IT/wiki',
+//            'icon_color' => 'aqua',
+//        ],
     ],
 
     /*
