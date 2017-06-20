@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();          // User email, must be unique in system
             $table->string('password');                 // User password
             $table->string('function');                 // Client function
-            $table->integer('admin')->default(0);       // 0 = default, 1 = admin
+            $table->tinyInteger('admin')->default(0);       // 0 = default, 1 = admin
             $table->rememberToken();                    // Special string for password recovery, don't touch!
             $table->timestamps();                       // Laravel TimeStamps, don't touch!
         });

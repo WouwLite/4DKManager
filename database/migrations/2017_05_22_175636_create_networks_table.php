@@ -21,8 +21,8 @@ class CreateNetworksTable extends Migration
             $table->string('port1', 20);                // Port on specified switch
             $table->string('switch2', 20);              // Secondary connection switch
             $table->string('port2', 20);                // Port on secondary switch
-            $table->integer('channel2', 4);       // WiFi channel 2.4GHz
-            $table->integer('channel5', 4);       // WiFi channel 5GHz
+            $table->integer('channel2', false, true)->length(4);       // WiFi channel 2.4GHz
+            $table->integer('channel5', false, true)->length(4);       // WiFi channel 5GHz
             $table->string('location', 20);             // Device location
             $table->string('mac', 20)->required;        // MAC-address
             $table->string('dns', 20);                  // DNS address

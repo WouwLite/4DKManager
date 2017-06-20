@@ -15,12 +15,12 @@ class CreateClientsTable extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->increments('id');                          // Unique ID, Primary Key, don't touch!
-            $table->integer('code');                           // Client Code, i.e.: 20171234
+            $table->integer('code', false, true);           // Client Code, i.e.: 20171234
             $table->string('name', 50);                 // Client name
             $table->string('email', 100)->unique();     // Client email, must be unique in system
-            $table->integer('function', 50);      // Foreign Key Client function
-            $table->string('tent');                            // Client tent number
-            $table->string('field');                           // Client flied
+            $table->string('function', 25);             // Client function
+            $table->string('tent', 5);                  // Client tent number
+            $table->string('field', 5);                 // Client flied
             $table->timestamps();                                      // Laravel TimeStamps, don't touch!
         });
     }

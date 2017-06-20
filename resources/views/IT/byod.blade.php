@@ -60,15 +60,19 @@
                         @endif
                         <td>{{ $network->mac }}</td>
                         <td>{{ $network->dhcptype }}</td>
-                        <td><span class="label label-success">Goedgekeurd</span></td>
+                        @if($network->byod_approved == 1)
+                            <td><span class="label label-success">Goedgekeurd</span></td>
+                        @else
+                            <td><span class="label label-danger">Afgekeurd</span></td>
+                        @endif
                         <td>
                             @if(!empty($network->manage_url))
                                 <a href="{{ $network->manage_url }}" target="_blank" class="btn btn-success" role="button">Beheren</a>
                             @else
                                 <button class="btn btn-success" role="button" disabled>Beheren</button>
                             @endif
-                            <a href="#" target="_blank" class="btn btn-primary" role="button"><i class="fa fa-wrench" aria-hidden="true"></i></a>
-                            <a href="#" target="_blank" class="btn btn-danger" role="button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            <a href="#" target="_blank" class="btn btn-primary" role="button" disabled><i class="fa fa-wrench" aria-hidden="true"></i></a>
+                            <a href="#" target="_blank" class="btn btn-danger" role="button" disabled><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                     @endif

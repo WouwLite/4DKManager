@@ -17,7 +17,7 @@ class CreateErrorsTable extends Migration
             $table->increments('id');       // Unique ID, Primary Key, don't touch!
             $table->string('title');        // Ticket title
             $table->string('body');         // Ticket body
-            $table->integer('status');      // Ticket status
+            $table->integer('status', false, true);      // Ticket status
             $table->string('solution');     // Ticket solution
             $table->timestamps();           // Laravel TimeStamps, don't touch!
         });
