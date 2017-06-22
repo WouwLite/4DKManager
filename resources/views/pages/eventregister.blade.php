@@ -4,23 +4,17 @@
 
 @section('content_header')
     <ol class="breadcrumb">
-        <li><a href="/home">Dashboard</a></li>
-        <li class="active">ERROR</li>
+        <li><a href="/">Openbaar</a></li>
+        <li class="active">Registreren</li>
     </ol>
-    <h1>ERROR</h1>
+    <h1>Registreren</h1>
 @stop
 
 @section('content')
-    @if(Auth::user()->admin === 1)
-        <div class="container-fluid">
-            <h2>Aaaaaaaaaah paniek! Deze pagina bestaat (nog) niet!</h2>
-            <br>
-            <br>
-            Deze pagina is nog niet openbaar zichtbaar.
-            <br>
-            <img src="http://cdn.wouwlite.eu/4dk.nl/images/404errorStarWars.gif">
-        </div>
-    @else
-        @include('layouts.unauthorized-error-return')
-    @endif
+    <div class="container-fluid">
+        <h2>Registreer voor het Scouting 4DaagseKamp 2017</h2>
+        <br>
+        <br>
+        De registratiefunctie is nog niet geactiveerd.
+    </div>
 @stop

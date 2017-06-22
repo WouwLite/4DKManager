@@ -83,11 +83,11 @@
                 </div>
 
                 <div class="links">
-                    <a href="#/site">Downloads</a>
-                    <a href="#/site">Plattegrond</a>
-                    <a href="#/site">Nieuws</a>
-                    <a href="#/site">Over ons</a>
-                    <a href="#/site">Contact</a>
+                    <a href="{{ url('/pages/campinfo') }}">Kampinfo</a>
+                    <a href="{{ url('/pages/map') }}">Plattegrond</a>
+                    <a href="{{ url('/pages/news') }}">Nieuws</a>
+                    <a href="{{ url('/pages/about') }}">Over ons</a>
+                    <a href="{{ url('/pages/contact') }}">Contact</a>
                 </div>
             </div>
         </div>

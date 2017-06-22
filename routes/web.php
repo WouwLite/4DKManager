@@ -71,6 +71,12 @@ Route::group(['prefix' => 'pages'], function () {
     });
 });
 
+Route::group(['prefix' => 'wireless'], function () {
+    Route::get('success', function () {
+        return view('wireless.success');
+    });
+});
+
 //
 // Administration pages
 //

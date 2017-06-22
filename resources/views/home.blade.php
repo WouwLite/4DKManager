@@ -103,7 +103,3 @@
         </div>
     @endif
 @stop
-
-<php if ?>
-    hier de html
-<php endif ?>
