@@ -30,9 +30,12 @@
                     <tr>
                         <td>{{ $client->code }}</td>
                         <td>{{ $client->name }}</td>
-                        <td>{{ $client->function }}</td>
-                        <td>{{ $client->tent }}</td>
-                        <td>{{ $client->field }}</td>
+                        <td><i class="fa fa-times fa-2x text-danger"></i></td>
+                        <td><i class="fa fa-check fa-2x text-success"></i></td>
+                        <td><i class="fa fa-times fa-2x text-danger"></i></td>
+                        {{--<td>{{ $client->function }}</td>--}}
+                        {{--<td>{{ $client->tent }}</td>--}}
+                        {{--<td>{{ $client->field }}</td>--}}
                         <td>
                             <button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-primary"><i class="fa fa-wrench" aria-hidden="true"></i></button> <button type="button" class="btn btn-danger disabled"><i class="fa fa-ban" aria-hidden="true"></i></button>
                         </td>

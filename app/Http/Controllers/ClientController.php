@@ -20,12 +20,13 @@ class ClientController extends Controller
         return view('clients.index', compact('clients'));
     }
 
+    // MealManager
     public function indexmm()
     {
         $clients = Client::all();
 
-        return $clients;
-//        return view('mealmanager.indexmm', compact('clients'));
+//        return $clients;
+        return view('mealmanager.indexmm', compact('clients'));
     }
 
     /**
