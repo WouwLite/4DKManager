@@ -134,7 +134,7 @@ Route::group(['prefix' => 'dashboard'], function () {
     });
 
     // Add module MealManager
-    Route::group(['prefix' => 'mealmanager'], function() {
+    Route::group(['prefix' => 'meals'], function() {
         Route::get('/', 'ClientController@indexmm'); //To prevent certain issues.
         Route::get('overview', 'ClientController@indexmm');
         Route::get('show/{code}', 'ClientController@show');
