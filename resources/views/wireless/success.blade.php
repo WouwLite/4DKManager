@@ -5,7 +5,7 @@
 </head>
 
 <br><br>
-<div class="container" style="text-align: center">
+<div class="container-float" style="text-align: center">
     <div class="jumbotron">
         <img src="http://scoutroam.org/scoutroam-web.png">
         <h1>Scoutroam Passpoint</h1>
