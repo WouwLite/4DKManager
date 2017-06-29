@@ -41,6 +41,13 @@
                 </tbody>
             </table>
         </div>
+        <h1>Button tests</h1>
+        <p>Client isn't allowed to have meal</p>
+        <button type="button" id="breakfastButtonTimes" class="btn btn-default" disabled><i class="fa fa-times fa-2x text-danger"></i></button>
+        <p>Client has meal, manager can check if approved</p>
+        <button type="button" id="breakfastButtonCheck" class="btn btn-default"><i class="fa fa-check fa-2x text-success"></i></button>
+        <p>Meal is approved and checked</p>
+        <button type="button" id="breakfastButtonCheckBlocked" class="btn btn-success"><i class="fa fa-check fa-2x"></i></button>
     @else
         @include('layouts.unauthorized-error-return')
     @endif

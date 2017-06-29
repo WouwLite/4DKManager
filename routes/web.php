@@ -75,6 +75,9 @@ Route::group(['prefix' => 'wireless'], function () {
     Route::get('success', function () {
         return view('wireless.success');
     });
+    Route::get('rules', function () {
+        return view('wireless.rules');
+    });
 });
 
 //
