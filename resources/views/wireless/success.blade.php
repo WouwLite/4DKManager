@@ -11,6 +11,6 @@
         <h1>Scoutroam Passpoint</h1>
         <div class="alert alert-success" role="alert"><h2><span class="glyphicon glyphicon-ok"></span> U bent succesvol verbonden</h2></div>
 
-        <a type="button" class="btn btn-primary btn-lg" href="/wireless/rules">Regels</a>
+        <a type="button" class="btn btn-primary btn-lg" href="/wireless/rules" style="min-width: 50%">Regels</a>
     </div>
 </div>

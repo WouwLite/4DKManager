@@ -12,7 +12,7 @@
             <h1>Scoutroam WiFi regels</h1>
 
             <center>
-                <div class="list-group center" style="max-width: 90%;">
+                <div class="list-group center" style="max-width: 50%;">
                     <button type="button" class="list-group-item">Scoutroam is niet verantwoordelijk voor enig verlies van informatie of schade aan uw apparatuur als gevolg van het gebruik van het netwerk. De gebruiker blijft verantwoordelijk voor de veiligheid van zijn apparatuur, laptopconfiguraties, verwijderingen van beveiliging of wijzigingen aan bestanden als gevolg van het gebruik van het netwerk.</button>
                     <button type="button" class="list-group-item">Het is niet toegestaan informatie met een illegale aard over ons netwerk te versturen.</button>
                     <button type="button" class="list-group-item">Scoutroam heeft het recht het netwerk op ieder moment te deactiveren, om onderhoud te verrichten en om gelijktijdig gebruik te verdelen.</button>
@@ -21,7 +21,7 @@
                 </div>
             </center>
 
-            <button type="button" class="btn btn-primary btn-lg" onclick="goBack()">Terug</button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="goBack()" style="min-width: 50%;">Terug</button>
         </div>
     </div>
 
