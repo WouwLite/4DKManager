@@ -6,9 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
 {
-//    protected $fillable = [
-//        'code',
-//        'name',
-//        'function'
-//    ];
+    public function meal()
+    {
+        return $this->hasMany('App\Meal');
+    }
 }

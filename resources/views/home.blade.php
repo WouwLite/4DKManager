@@ -11,8 +11,8 @@
 @stop
 
 @section('content')
-    <div class="container-fluid">
-        <h1>Welkom {{ Auth::user()->name }}!</h1>
+        <div class="container-fluid">
+        <h1>Welkom {{ Auth::user()->name }}</h1>
             <style>
                 body{padding-top:30px;}
 
@@ -26,8 +26,8 @@
             </style>
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6">
-                        <div class="well well-sm">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="well">
                             <div class="row">
                                 <div class="col-sm-6 col-md-4" style="text-align: center">
                                     {!! QrCode::size(150)->generate(Auth::user()->code) !!}<br>
@@ -61,7 +61,7 @@
 
 
         @if(Auth::user()->admin === 1 && Auth::user()->function === "developer")
-            <p>Je bent aangemeld als <span class="label label-warning"><strong>developer</strong></span></p>
+            <strong>Je ziet dit omdat je aangemeld bent als <span class="label label-warning"><strong>developer</strong></span></strong>
             <div class="container-fluid" style="background-color: navajowhite;">
                 <strong>Admin Quicklinks</strong>
                 <ol>
@@ -76,25 +76,6 @@
                 <p>Admin Interface is shown when function is "beheerder" and admin is "1".</p>
             </div>
             <br>
-            <div class="row">
-                <div class="col-sm-2">
-                    {!! QrCode::size(150)->generate(Auth::user()->code) !!}<br>
-                    QR waarde: {{ Auth::user()->code }}<br>
-                </div>
-                <div class="col-sm-3">
-                    Je ID is: <br>
-                    Je deelnemernummer is: <br>
-                    Je emailadres is: <br>
-                    Je functie is: <br>
-                    <br>
-                </div>
-                <div class="col-sm-7">
-                    <span class="label label-default">{{ Auth::user()->id }}</span><br>
-                    <span class="label label-default">{{ Auth::user()->code }}</span><br>
-                    <span class="label label-default">hidden</span><br>
-                    <span class="label label-default">{{ Auth::user()->function }}</span><br>
-                </div>
-            </div>
         </div>
         <br><br>
         <div class="container-fluid">

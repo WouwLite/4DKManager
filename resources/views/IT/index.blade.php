@@ -31,9 +31,9 @@
                     <th>Switch</th>
                     <th>Port</th>
                     <th>Location</th>
-                    <th>Channel</th>
-                    <th>MAC</th>
-                    <th>DNS</th>
+                    {{--<th>Channel</th>--}}
+                    {{--<th>MAC</th>--}}
+                    {{--<th>DNS</th>--}}
                     <th>DHCP</th>
                     <th></th>
                 </tr>
@@ -59,15 +59,15 @@
                         @else
                             <td style="text-align: center"><span class="label label-primary">{{ $network->location }}</span></td>
                         @endif
-                        <td>{{ $network->channel }}</td>
-                        <td>{{ $network->mac }}</td>
-                        <td>{{ $network->dns }}</td>
+                        {{--<td>{{ $network->channel }}</td>--}}
+                        {{--<td>{{ $network->mac }}</td>--}}
+                        {{--<td>{{ $network->dns }}</td>--}}
                         <td>{{ $network->dhcptype }}</td>
                         <td>
                             @if(!empty($network->manage_url))
-                            <a href="{{ $network->manage_url }}" target="_blank" class="btn btn-success" role="button">Beheren</a>
+                                <a href="{{ $network->manage_url }}" target="_blank" class="btn btn-success" role="button">Beheren</a>
                             @else
-                            <button class="btn btn-success" role="button" disabled>Beheren</button>
+                                <button class="btn btn-success" role="button" disabled>Beheren</button>
                             @endif
                             <a href="#" target="_blank" class="btn btn-primary" role="button"><i class="fa fa-wrench" aria-hidden="true"></i></a>
                             <a href="#" target="_blank" class="btn btn-danger" role="button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>

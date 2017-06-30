@@ -29,7 +29,7 @@
                     @endif
                 </div>
                 <div class="form-group has-feedback {{ $errors->has('code') ? 'has-error' : '' }}">
-                    <input type="text" name="code" class="form-control" value="{{ date("Y") . rand(1000,9999) }}" readonly>
+                    <input type="text" name="code" class="form-control" value="{{ date("Y") . rand(1000,9999) }}" placeholder="Uw unieke code" readonly>
                     <span class="glyphicon glyphicon-qrcode form-control-feedback"></span>
                     @if ($errors->has('code'))
                         <span class="help-block">
@@ -38,15 +38,15 @@
                     @endif
                 </div>
                 <div class="form-group has-feedback {{ $errors->has('function') ? 'has-error' : '' }}">
-                    <select name="function" class="form-control" value="{{ old('function') }}" placeholder="Wat is uw functie?">
+                    <select name="function" class="form-control" value="{{ old('function') }}">
                         <option value="bezoeker">Bezoeker</option>
                         <option value="loper" selected>Loper</option>
-                        <option value="externe-loper">Externe loper</option>
+                        <option value="externe_loper">Externe loper</option>
                         <option value="ondersteuner">Ondersteuner</option>
                         <option value="medewerker">Medewerker</option>
-                        <option value="kind-van-medewerker">Kind van medewerker</option>
-                        <option value="teamleider">Teamleider</option>
-                        <option value="organisatie">Organisatie</option>
+                        <option value="jeugdige_medewerker">Jeugdige medewerker</option>
+                        <option value="teamleider" disabled>Teamleider</option>
+                        <option value="organisatie" disabled>Organisatie</option>
                         <option value="kernteam" disabled>Kernteam</option>
                     </select>
 
