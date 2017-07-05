@@ -49,7 +49,7 @@
                     <td>{{ $client->tent }}</td>
                     <td>{{ $client->field }}</td>
                     <td>
-                        <button type="button" class="btn btn-info">Info</button> <button type="button" class="btn btn-primary"><i class="fa fa-wrench" aria-hidden="true"></i></button> <button type="button" class="btn btn-danger disabled"><i class="fa fa-ban" aria-hidden="true"></i></button>
+                        <a type="button" href="/dashboard/clients/show/{{ $client->id }}" class="btn btn-info">Info</a> <button type="button" class="btn btn-primary"><i class="fa fa-wrench" aria-hidden="true"></i></button> <button type="button" class="btn btn-danger disabled"><i class="fa fa-ban" aria-hidden="true"></i></button>
                     </td>
                 </tr>
                 @endforeach

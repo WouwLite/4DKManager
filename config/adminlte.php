@@ -148,12 +148,12 @@ return [
         'ADMINISTRATIE',
         [
             'text' => 'Overzicht deelnemers',
-            'url'  => 'dashboard/clients/overview',
+            'url'  => 'dashboard/clients',
             'icon' => 'user',
         ],
         [
             'text' => 'Maaltijden',
-            'url'  => 'dashboard/meals/overview',
+            'url'  => 'dashboard/meals',
             'icon' => 'cutlery',
         ],
         [

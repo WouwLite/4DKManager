@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Client;
-use App\Meal;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -16,18 +15,7 @@ class ClientController extends Controller
     public function index()
     {
         $clients = Client::all();
-
-//        return $clients;
         return view('clients.index', compact('clients'));
-    }
-
-    // MealManager
-    public function indexmm()
-    {
-        $clients = Client::all();
-        $meals = Meal::all();
-
-        return view('mealmanager.indexmm', compact('clients'), compact('meals'));
     }
 
     /**
@@ -57,9 +45,10 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($code)
     {
-        return 'Show';
+        $client = Client::find($code);
+        return view('clients/show', compact('client'));
     }
 
     /**

@@ -124,8 +124,7 @@ Route::get('home', 'HomeController@index');
 Route::group(['prefix' => 'dashboard'], function () {
     // Add module Client Overview
     Route::group(['prefix' => 'clients'], function () {
-        Route::get('/', 'ClientController@index'); //To prevent certain issues.
-        Route::get('overview', 'ClientController@index');
+        Route::get('/', 'ClientController@index');
         Route::get('show/{code}', 'ClientController@show');
         Route::get('create', 'ClientController@create');
     });
@@ -138,8 +137,21 @@ Route::group(['prefix' => 'dashboard'], function () {
 
     // Add module MealManager
     Route::group(['prefix' => 'meals'], function() {
-        Route::get('/', 'ClientController@indexmm'); //To prevent certain issues.
-        Route::get('overview', 'ClientController@indexmm');
-        Route::get('show/{code}', 'ClientController@show');
+        // New controller !!
+        Route::get('client/{id}', 'MealController@client');
+        Route::get('/', 'MealController@meals');
+
+        // Redirects
+        Route::get('client', 'MealController@redirect');
+    });
+
+    // Add module WakeService
+    Route::group(['prefix' => 'night'], function () {
+        Route::group(['prefix' => 'wake-up'], function () {
+            Route::get('/', 'WakeServiceController@index');
+            Route::get('show/{code}', 'WakeServiceController@show');
+            Route::get('create', 'WakeServiceController@create');
+            Route::get('edit', 'WakeServiceController@edit');
+        });
     });
 });
