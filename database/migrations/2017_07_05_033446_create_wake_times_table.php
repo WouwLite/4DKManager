@@ -22,7 +22,7 @@ class CreateWakeTimesTable extends Migration
             // Data
             $table->date('date');                                                      // Date for wake-up time from FK (i.e. 21-04-2017)
             $table->string('time', 6);                                          // Wake-up time
-            $table->string('info', 150)l;                                       // Additional info
+            $table->string('info', 150);                                       // Additional info
 
             $table->timestamps();                                                              // Laravel TimeStamps, don't touch!
         });
