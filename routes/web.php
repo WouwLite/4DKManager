@@ -65,6 +65,28 @@ Route::group(['prefix' => 'pages'], function () {
         return view('pages.eventmap');
     });
 
+    // Custom event specific routes
+    Route::group(['prefix' => '4daagse'], function () {
+        Route::get('routes', function () {
+            return view('pages.4daagse.routes');
+        });
+        Route::get('dinsdag', function () {
+            return view('pages.4daagse.dinsdag');
+        });
+        Route::get('woensdag', function () {
+            return view('pages.4daagse.woensdag');
+        });
+        Route::get('donderdag', function () {
+            return view('pages.4daagse.donderdag');
+        });
+        Route::get('vrijdag', function () {
+            return view('pages.4daagse.vrijdag');
+        });
+        Route::get('stad', function () {
+            return view('pages.4daagse.stad');
+        });
+    });
+
     // Route to simple email signature page
     Route::get('signature', function () {
         return view('pages.signature');
@@ -84,28 +106,30 @@ Route::group(['prefix' => 'wireless'], function () {
 // Administration pages
 //
 
-Route::group(['prefix' => 'IT'], function () {
-    // Add IT dashboard
-    Route::group(['prefix' => 'network'], function () {
-        Route::get('dashboard', 'NetworkController@index');
-        Route::get('show/{code}', 'NetworkController@show');
-        Route::get('create', 'NetworkController@create');
-        Route::get('topology', 'NetworkController@topology');
-        Route::get('byod', 'NetworkController@BringYourOwnDevice');
+Route::group(['middleware' => 'admin'], function() {
+    Route::group(['prefix' => 'IT'], function () {
+        // Add IT dashboard
+        Route::group(['prefix' => 'network'], function () {
+            Route::get('dashboard', 'NetworkController@index');
+            Route::get('show/{code}', 'NetworkController@show');
+            Route::get('create', 'NetworkController@create');
+            Route::get('topology', 'NetworkController@topology');
+            Route::get('byod', 'NetworkController@BringYourOwnDevice');
 
-        Route::group(['prefix' => 'map'], function () {
-           Route::get('indoor', 'NetworkController@map_indoor');
-           Route::get('outdoor', 'NetworkController@map_outdoor');
+            Route::group(['prefix' => 'map'], function () {
+               Route::get('indoor', 'NetworkController@map_indoor');
+               Route::get('outdoor', 'NetworkController@map_outdoor');
+            });
         });
-    });
 
 
-    Route::get('old', function () {
-        return view('IT.index');
-    });
+        Route::get('old', function () {
+            return view('IT.index');
+        });
 
-    Route::get('NOC', function () {
-        return view('IT.noc');
+        Route::get('NOC', function () {
+            return view('IT.noc');
+        });
     });
 });
 
@@ -121,37 +145,40 @@ Auth::routes();
 
 Route::get('home', 'HomeController@index');
 
-Route::group(['prefix' => 'dashboard'], function () {
-    // Add module Client Overview
-    Route::group(['prefix' => 'clients'], function () {
-        Route::get('/', 'ClientController@index');
-        Route::get('show/{code}', 'ClientController@show');
-        Route::get('create', 'ClientController@create');
-    });
+Route::group(['middleware' => 'organisation'], function() {
+    Route::group(['prefix' => 'dashboard'], function () {
 
-    // Add route to print one or multiple ID badge
-    Route::group(['prefix' => 'badges'], function () {
-        Route::get('printOne/{code}', 'BadgesController@printOne');
-        Route::get('printMultiple', 'BadgesController@printMultiple');
-    });
+        // Client Module
+        Route::group(['prefix' => 'clients'], function () {
+            Route::get('/', 'ClientController@index');
+            Route::get('show/{code}', 'ClientController@show');
+            Route::get('create', 'ClientController@create');
+        });
 
-    // Add module MealManager
-    Route::group(['prefix' => 'meals'], function() {
-        // New controller !!
-        Route::get('client/{id}', 'MealController@client');
-        Route::get('/', 'MealController@meals');
+        // Butterfly Badge Module
+        Route::group(['prefix' => 'badges'], function () {
+            Route::get('/', 'BadgesController@printOne');
+            Route::get('printOne/{code}', 'BadgesController@printOne');
+            Route::get('printMulti', 'BadgesController@printMultiple');
+        });
 
-        // Redirects
-        Route::get('client', 'MealController@redirect');
-    });
+        // Meals Module
+        Route::group(['prefix' => 'meals'], function() {
+            Route::get('/', 'MealController@meals');
+            Route::get('today', 'MealController@today');
+            Route::get('client/{id}', 'MealController@client');
+            Route::get('client', 'MealController@redirect'); // Just a simple redirect
+            Route::get('update', 'MealController@update');
+        });
 
-    // Add module WakeService
-    Route::group(['prefix' => 'night'], function () {
-        Route::group(['prefix' => 'wake-up'], function () {
-            Route::get('/', 'WakeServiceController@index');
-            Route::get('show/{code}', 'WakeServiceController@show');
-            Route::get('create', 'WakeServiceController@create');
-            Route::get('edit', 'WakeServiceController@edit');
+        // Wakeservice Module
+        Route::group(['prefix' => 'night'], function () {
+            Route::group(['prefix' => 'wake-up'], function () {
+                Route::get('/', 'WakeServiceController@index');
+                Route::get('show/{code}', 'WakeServiceController@show');
+                Route::get('create', 'WakeServiceController@create');
+                Route::get('edit', 'WakeServiceController@edit');
+            });
         });
     });
 });

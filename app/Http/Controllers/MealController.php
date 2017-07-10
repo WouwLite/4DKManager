@@ -16,12 +16,34 @@ class MealController extends Controller
     // Show client data
     public function client($id){
         $client = Client::find($id);
-        return view('mealmanager/client', compact('client'));
+        return view('modules/meals/client', compact('client'));
     }
 
     // Show overview meals
     public function meals() {
         $meals = Meal::all();
-        return view('mealmanager/meals', compact('meals'));
+        return view('modules/meals/meals', compact('meals'));
+    }
+
+    // Show today's meals
+    public function today() {
+        $meals = Meal::all();
+        return view('modules/meals/today', compact('meals'));
+    }
+
+    // Show today's meals
+    public function update() {
+        $meals = Meal::all();
+
+        //your validation lines.....
+
+        $id                 = $request->id;
+        $breakfastApprove   = $request->approve;
+        $meal               = Tutor::findOrfail($id);
+
+        $meal->breakfast    = $breakfastApprove;
+        $meal->save();
+
+        return view('modules/meals/today', compact('meals'));
     }
 }

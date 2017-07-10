@@ -11,13 +11,16 @@
 @stop
 
 @section('content')
+    @include('includes/error')
+    <h2>Downloads</h2>
+    <br>
+    <br>
+    Er zijn nog geen downloads beschikbaar.
+
+
     @if(Auth::user()->admin === 1)
-        <h2>Download (belangrijke) informatie</h2>
-        <br>
-        <br>
-        <br>
-        <img src="http://cdn.wouwlite.eu/4dk.nl/images/404errorStarWars.gif">
-    @else
-        @include('layouts.unauthorized-error-return')
+        <br><br>
+        <p>Downloads aanroepen via Database, foreach loop maken voor het genereren van downloads.</p>
+        <p>Organisatie-specifieke downloadslijst</p>
     @endif
 @stop

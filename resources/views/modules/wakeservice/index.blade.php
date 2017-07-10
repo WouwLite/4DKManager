@@ -8,7 +8,7 @@
         <li><a href="/dashboard/night">Nacht</a></li>
         <li class="active">Wekdienst</li>
     </ol>
-    <h1>Wekdienst</h1>
+    <h1>@include('includes/goBack') Wekdienst</h1>
 @stop
 
 @section('content')

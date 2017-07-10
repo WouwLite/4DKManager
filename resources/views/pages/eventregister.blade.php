@@ -16,9 +16,12 @@
     <br>
     <br>
     De registratiefunctie is nog niet geactiveerd.
-    <br><br>
-    Registratieformulier a.d.v. Clients table.<br>
-    Nieuwe gebruikers op 4dk.nl die registreren (in de 'users' table), krijgen een account met specifieke rechten<br>
-    Via het aanmelden kan deze gebruiker zijn gegevens toevoegen aan de 'clients' table.<br>
-    De FK relatie maakt deze koppeling werkend en functioneel (hoewel wel redelijk omslachtig... dingetje voor de toekomst!).
+
+    @if(Auth::user()->admin === 1)
+        <br><br>
+        Registratieformulier a.d.v. Clients table.<br>
+        Nieuwe gebruikers op 4dk.nl die registreren (in de 'users' table), krijgen een account met specifieke rechten<br>
+        Via het aanmelden kan deze gebruiker zijn gegevens toevoegen aan de 'clients' table.<br>
+        De FK relatie maakt deze koppeling werkend en functioneel (hoewel wel redelijk omslachtig... dingetje voor de toekomst!).
+    @endif
 @stop

@@ -65,7 +65,7 @@
                         @else
                             <td><span class="label label-danger">Afgekeurd</span></td>
                         @endif
-                        <td>
+                        <td align="right">
                             @if(!empty($network->manage_url))
                                 <a href="{{ $network->manage_url }}" target="_blank" class="btn btn-success" role="button">Beheren</a>
                             @else

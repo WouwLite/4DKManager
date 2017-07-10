@@ -9,7 +9,7 @@
         <li><a href="/dashboard/meals/client">Gebruikers</a></li>
         <li class="active">{{ $client->name }}</li>
     </ol>
-    <h1>Meals Overview</h1>
+    <h1>@include('includes/goBack') Meals Overview</h1>
 @stop
 
 @section('content')

@@ -12,6 +12,7 @@
 
 @section('content')
         <div class="container-fluid">
+            @include('includes/error')
         <h1>Welkom {{ Auth::user()->name }}</h1>
             <style>
                 body{padding-top:30px;}
@@ -44,11 +45,10 @@
                                             Je bent aangemeld als <span class="label label-warning"><strong>beheerder</strong></span>
                                         @endif
                                     </p>
-                                    <!-- Buttongroup -->
                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn btn-primary">Wekdienst</button>
-                                        <button type="button" class="btn btn-primary">Wakker melden</button>
-                                        <button type="button" class="btn btn-primary">Opgeven maaltijd</button>
+                                        <button type="button" class="btn btn-primary" disabled>Wekdienst</button>
+                                        <button type="button" class="btn btn-primary" disabled>Wakker melden</button>
+                                        <button type="button" class="btn btn-primary" disabled>Opgeven maaltijd</button>
                                     </div>
                                 </div>
                             </div>

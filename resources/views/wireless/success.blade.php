@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
 
     {{--<!-- Scripts -->--}}
     {{--<script>--}}
@@ -26,17 +27,17 @@
     <div class="jumbotron">
         {{--<img src="http://scoutroam.org/scoutroam-web.png" style="max-width: 100%">--}}
         <img src="//4dk.dev/img/scoutroam-web.png" style="max-width: 100%">
-        <h1>Scoutroam Passpoint</h1>
+        <h1>{{ config('app.name', 'Scoutroam Passpoint') }}</h1>
         @if((Auth::user() == true))
-            <div class="alert alert-success" role="alert"><h2><span class="glyphicon glyphicon-ok"></span> Hi {{ Auth::user()->name }}, je bent succesvol verbonden!</h2></div>
+            <div class="alert alert-success" role="alert"><h2><span class="fa fa-check"></span> Hi {{ Auth::user()->name }}, je bent succesvol verbonden!</h2></div>
         @else
-            <div class="alert alert-success" role="alert"><h2><span class="glyphicon glyphicon-ok"></span> U bent succesvol verbonden!</h2></div>
+            <div class="alert alert-success" role="alert"><h2><span class="fa fa-checkk"></span> U bent succesvol verbonden!</h2></div>
         @endif
 
         @if(Auth::user() == true)
-            <a type="button" class="btn btn-primary btn-lg" href="/wireless/rules" style="min-width: 35%">Regels</a> <a type="button" class="btn btn-default btn-lg" href="/login" style="min-width: 15%"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Dashboard</a>
+            <a type="button" class="btn btn-primary btn-lg" href="/wireless/rules" style="min-width: 35%">Regels</a> <a type="button" class="btn btn-default btn-lg" href="/login" target="_blank" style="min-width: 15%"><span class="fa fa-dashboard" aria-hidden="true"></span> Dashboard</a>
         @else
-            <a type="button" class="btn btn-primary btn-lg" href="/wireless/rules" style="min-width: 35%">Regels</a> <a type="button" class="btn btn-default btn-lg" href="/login" style="min-width: 15%"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Log in</a>
+            <a type="button" class="btn btn-primary btn-lg" href="/wireless/rules" style="min-width: 35%">Regels</a> <a type="button" class="btn btn-default btn-lg" href="/login" target="_blank" style="min-width: 15%"><span class="fa fa-user" aria-hidden="true"></span> Log in</a>
         @endif
     </div>
 </div>

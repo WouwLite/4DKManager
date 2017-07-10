@@ -1,4 +1,5 @@
-<div class="alert alert-warning alert-dismissible" role="alert">
+<div class="alert alert-info alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <strong>Warning!</strong> This page doesn't function as espected! This is a demo / test.
+    <strong>Let op!</strong> Deze website is nog niet geheel operationeel! Bepaalde functies zijn uitgeschakeld of niet zichtbaar.<br>
+    Teamleiders, Organisatie- en Kernteamleden kunnen authorisatie aanvragen door <b><a href="#">hier</a></b> te klikken.
 </div>

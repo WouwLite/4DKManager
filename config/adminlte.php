@@ -126,6 +126,11 @@ return [
             'icon'      => 'file',
         ],
         [
+            'text'      => 'Routekaartjes',
+            'url'       => 'pages/4daagse/routes',
+            'icon'      => 'map-signs',
+        ],
+        [
             'text'      => 'Plattegrond',
             'url'       => 'pages/map',
             'icon'      => 'map',
@@ -176,15 +181,18 @@ return [
             'icon_color' => 'red',
         ],
         [
-            'text'       => 'NOC Status',
+            'text'       => 'NOC',
             'url'        => 'IT/NOC',
+            'icon'       => 'line-chart',
+            'icon_color' => 'orange',
+        ],
+
+        [
+            'text'       => 'Wiki',
+            'url'        => 'IT/wiki',
+            'icon'       => 'info',
             'icon_color' => 'aqua',
         ],
-//        [
-//            'text'       => 'Information',
-//            'url'        => 'IT/wiki',
-//            'icon_color' => 'aqua',
-//        ],
     ],
 
     /*

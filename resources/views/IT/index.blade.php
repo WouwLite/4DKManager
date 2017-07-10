@@ -12,7 +12,7 @@
 @stop
 
 @section('content')
-    @if(Auth::user()->admin === 1)
+    {{--@if(Auth::user()->admin === 1)--}}
         <div class="container-fluid">
             <h2>Netwerkplan Scoutroam 4DK-2017</h2>
             <p>Klik op de knop 'Beheren' om naar de beheer interface te gaan</p>
@@ -48,7 +48,7 @@
                         <td><-></td>
                         <td style="text-align: right; background-color: {{ $network->colour }}"><strong>{{ $network->switch2 }}</strong></td>
                         <td style="text-align: left; background-color: {{ $network->colour }}">{{ $network->port2 }}</td>
-                        @if($network->location == "MER")
+                        @if($network->location == "MEU-1")
                             <td style="text-align: center"><span class="label label-danger">MER</span></td>
                         @elseif($network->location == "KIP")
                             <td style="text-align: center"><span class="label label-warning">KIP</span></td>
@@ -63,13 +63,23 @@
                         {{--<td>{{ $network->mac }}</td>--}}
                         {{--<td>{{ $network->dns }}</td>--}}
                         <td>{{ $network->dhcptype }}</td>
-                        <td>
+                        <td align="right">
                             @if(!empty($network->manage_url))
                                 <a href="{{ $network->manage_url }}" target="_blank" class="btn btn-success" role="button">Beheren</a>
                             @else
                                 <button class="btn btn-success" role="button" disabled>Beheren</button>
                             @endif
                             <a href="#" target="_blank" class="btn btn-primary" role="button"><i class="fa fa-wrench" aria-hidden="true"></i></a>
+
+                            <!-- delete the nerd (uses the destroy method DESTROY /nerds/{id} -->
+                            <!-- we will add this later since its a little more complicated than the other two buttons -->
+                            {{--{{ Form::open(array('url' => 'IT/' . $network->id, 'class' => 'pull-right')) }}--}}
+                            {{--{{ Form::hidden('_method', 'DELETE') }}--}}
+                            {{--{{ Form::submit('Delete this device', array('class' => 'btn btn-warning')) }}--}}
+                            {{--{{ Form::close() }}--}}
+
+
+
                             <a href="#" target="_blank" class="btn btn-danger" role="button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                         </td>
                     </tr>
@@ -77,7 +87,7 @@
                 </tbody>
             </table>
         </div>
-    @else
-        @include('layouts.unauthorized-error-return')
-    @endif
+    {{--@else--}}
+        {{--@include('layouts.unauthorized-error-return')--}}
+    {{--@endif--}}
 @stop

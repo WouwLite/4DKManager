@@ -10,4 +10,9 @@ class Client extends Model
     {
         return $this->hasMany('App\Meal');
     }
+
+    public function roles()
+    {
+        return $this->belongsTo('App\Role');
+    }
 }

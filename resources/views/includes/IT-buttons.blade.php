@@ -5,5 +5,5 @@
     <a href="/IT/network/map/outdoor" type="button" class="btn btn-primary">Plattegrond Terrein</a>
 </div>
 <div class="btn-group btn-group-lg" role="group" aria-label="...">
-    <a href="/IT/network/byod" type="button" class="btn btn-info">BYOD</a>
+    <a href="/IT/network/byod" type="button" class="btn btn-info"><span class="fa fa-laptop"></span> BYOD</a>
 </div>

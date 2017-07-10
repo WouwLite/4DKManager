@@ -14,11 +14,11 @@ class BadgesController extends Controller
      */
     public function printOne()
     {
-        return view('badges.printOne');
+        return view('modules/badges/printOne');
     }
 
     public function printMultiple()
     {
-        return view('badges.printMultiple');
+        return view('modules/badges/printMultiple');
     }
 }

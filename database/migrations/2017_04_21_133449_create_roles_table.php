@@ -13,9 +13,9 @@ class CreateFunctionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('functions', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->increments('id');               // Unique ID, Primary Key, don't touch!
-            $table->string('function');             // Function names
+            $table->string('role');                 // Role names
             $table->timestamps();                           // Laravel TimeStamps, don't touch!
         });
     }

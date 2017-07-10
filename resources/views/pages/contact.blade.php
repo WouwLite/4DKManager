@@ -11,11 +11,17 @@
 @stop
 
 @section('content')
-    <div class="container-fluid">
-        <h2>Aaaaaaaaaah paniek! Deze pagina bestaat (nog) niet!</h2>
-        <br>
-        <br>
-        <br>
-        <img src="http://cdn.wouwlite.eu/4dk.nl/images/404errorStarWars.gif">
-    </div>
+    @include('includes/error')
+    <h2>Contactgegevens</h2>
+    <br>
+    <br>
+    De registratiefunctie is nog niet geactiveerd.
+
+    @if(Auth::user()->admin === 1)
+        <br><br>
+        Registratieformulier a.d.v. Clients table.<br>
+        Nieuwe gebruikers op 4dk.nl die registreren (in de 'users' table), krijgen een account met specifieke rechten<br>
+        Via het aanmelden kan deze gebruiker zijn gegevens toevoegen aan de 'clients' table.<br>
+        De FK relatie maakt deze koppeling werkend en functioneel (hoewel wel redelijk omslachtig... dingetje voor de toekomst!).
+    @endif
 @stop
