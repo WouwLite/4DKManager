@@ -33,7 +33,8 @@
                 <thead>
                 <tr>
                     <th>Code</th>
-                    <th>Naam</th>
+                    <th>Voornaam</th>
+                    <th>Achternaam</th>
                     <th>Rol</th>
                     <th>Tentnr</th>
                     <th>Vak</th>
@@ -45,6 +46,7 @@
                 <tr>
                     <td>{{ $client->code }}</td>
                     <td>{{ $client->name }}</td>
+                    <td>{{ $client->lastname }}</td>
                     <td>
                         @if($client->roles->id >= 1 && $client->roles->id <= 3)
                             <span class="label label-danger">{{ $client->roles->role }}</span>

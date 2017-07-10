@@ -16,13 +16,7 @@
         <div class="table-responsive">
             @include('includes/error')
 
-            @if(Auth::user()->admin == 1)
-                <b>Dit zien alleen beheerders!</b><br>
-                {{ date("l j F Y") }} << Klopt deze info wel?<br>
-                {{ date("Y-m-d") }}<br>
-                Ja, andere tijdzone... Staat op Europe\Amsterdam of UTC<br>
-                <b>Einde onzichtbare opmerkingen</b>
-            @endif
+            @include('includes/meal-buttons')
 
             <h4>Overzicht alle maaltijden</h4>
 
