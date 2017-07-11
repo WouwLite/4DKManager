@@ -82,7 +82,7 @@
 
     <div class="content">
         <div class="title m-b-md">
-            <img src="//4dk.dev/img/scoutroam-web.png" style="max-width: 100%; margin-top: 25px">
+            <img src="/img/scoutroam-web.png" style="max-width: 100%; margin-top: 25px">
             <h1>{{ config('app.name', 'Scoutroam Passpoint') }}</h1>
             @if((Auth::user() == true))
                 <div class="alert alert-success" role="alert"><h2><span class="fa fa-check"></span> Hi {{ Auth::user()->name }}, je bent succesvol verbonden!</h2></div>
