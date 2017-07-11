@@ -69,16 +69,16 @@
 </head>
 <body>
 <div class="flex-center position-ref full-height">
-    @if (Route::has('login'))
-        <div class="top-right links">
-            @if (Auth::check())
-                <a href="{{ url('/home') }}">Dashboard</a>
-            @else
-                <a href="{{ url('/login') }}">Aanmelden</a>
-                <a href="{{ url('/register') }}">Registreren</a>
-            @endif
-        </div>
-    @endif
+    {{--@if (Route::has('login'))--}}
+        {{--<div class="top-right links">--}}
+            {{--@if (Auth::check())--}}
+                {{--<a href="{{ url('/home') }}">Dashboard</a>--}}
+            {{--@else--}}
+                {{--<a href="{{ url('/login') }}">Aanmelden</a>--}}
+                {{--<a href="{{ url('/register') }}">Registreren</a>--}}
+            {{--@endif--}}
+        {{--</div>--}}
+    {{--@endif--}}
 
     <div class="content">
         <div class="title m-b-md">
@@ -93,13 +93,13 @@
             <a type="button" class="btn btn-primary btn-lg" href="/wireless/rules" style="min-width: 80%">Regels</a>
         </div>
 
-        <div class="links">
-            <a href="{{ url('/pages/campinfo') }}">Kampinfo</a>
-            <a href="{{ url('/pages/map') }}">Plattegrond</a>
-            <a href="{{ url('/pages/news') }}">Nieuws</a>
-            <a href="{{ url('/pages/about') }}">Over ons</a>
-            <a href="{{ url('/pages/contact') }}">Contact</a>
-        </div>
+        {{--<div class="links">--}}
+            {{--<a href="{{ url('/pages/campinfo') }}">Kampinfo</a>--}}
+            {{--<a href="{{ url('/pages/map') }}">Plattegrond</a>--}}
+            {{--<a href="{{ url('/pages/news') }}">Nieuws</a>--}}
+            {{--<a href="{{ url('/pages/about') }}">Over ons</a>--}}
+            {{--<a href="{{ url('/pages/contact') }}">Contact</a>--}}
+        {{--</div>--}}
     </div>
 </div>
 </body>
