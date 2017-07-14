@@ -15,7 +15,8 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');                       // Unique ID, Primary Key, *don't touch!*
-            $table->integer('code');                        // Uniquely generated code (i.e. 20171234)
+            $table->integer('client_id', false, true); // Add FK 'Clients' Table
+            $table->integer('code', false, true);                        // Uniquely generated code (i.e. 20171234)
             $table->string('name');                         // Name (prefer: full name)
             $table->string('email')->unique();              // User email, must be unique in system
             $table->string('password');                     // User password

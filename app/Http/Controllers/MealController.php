@@ -39,11 +39,39 @@ class MealController extends Controller
 
         $id                 = $request->id;
         $breakfastApprove   = $request->approve;
-        $meal               = Tutor::findOrfail($id);
+        $meal               = Meal::findOrfail($id);
 
         $meal->breakfast    = $breakfastApprove;
         $meal->save();
 
         return view('modules/meals/today', compact('meals'));
     }
+
+    // Add new meal to a client
+    public function create() {
+        return "Not available!";
+    }
+
+
+    public function updateBreakfast(Request $request, $id) {
+        $meal = findOrFail($id);
+        $meal->breakfast = '2';
+        $meal->update;
+        return redirect()->back()->with('message', 'Employee updated!');
+    }
+
+
+
+
+//    // Process the POST request from the create form
+//    public function updateBreakfast($id , Request $request) {
+////        dd(request()->all());
+//
+////        $meal = new Meal;
+//        $meal = findOrFail($id);
+//        $meal->breakfast = $request->breakfast;
+//        $meal->save;
+//
+//        return redirect('dashboard/meals');
+//    }
 }

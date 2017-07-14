@@ -19,6 +19,7 @@
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
         <title>Deelnemerinformatie</title>
     </head>
     <body>
@@ -27,50 +28,93 @@
     <div class="row">
         <div class="container-fluid">
             <br><br>
-            <div class="panel panel-default col-sm-5">
+            <div class="panel panel-default col-sm-8">
                 <h3>Algemene gegevens</h3>
-                <p><b>Ja, onderstaand is kut. Gaat nog veranderen...</b></p>
-                <ul style="list-style-type: none;">
-                    <li>Code: {{ $client->code }}</li>
-                    <li>Naam: {{ $client->name }}</li>
-                    <li>Achternaam: {{ $client->lastname }}</li>
-                    <li>Email: {{ $client->email }}</li>
-                    <li>Slaapplaats: <b>{{ $client->tent }}</b> Veld <b>{{ $client->field }}</b></li>
-                    <li>Adres: {{ $client->address }}</li>
-                    <li>PC + plaats: {{ $client->postalcode }}, {{ $client->city }}</li>
-                    <li>Land: {{ $client->country }}</li>
-                </ul>
+                <hr>
+
+                <div class="col-md-3">
+                    <ul style="list-style-type: none;">
+                        <li>Code</li>
+                        <li>Naam</li>
+                        <li>Achternaam</li>
+                        <li>Email</li>
+                        <li>Adres</li>
+                        <li>Postcode & Plaats</li>
+                        <li>Land</li>
+                        <li><hr></li>
+                        <li>Rol</li>
+                        <li>Slaapplaats & veld</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6">
+                    <ul style="list-style-type: none">
+                        <li><b>{{ $client->code }}</b></li>
+                        <li><b>{{ $client->name }}</b></li>
+                        <li><b>{{ $client->lastname }}</b></li>
+                        <li><b>{{ $client->email }}</b></li>
+                        <li><b>{{ $client->address }}</b></li>
+                        <li><b>{{ $client->postalcode }}, {{ $client->city }}</b></li>
+                        <li><b>{{ $client->countries->country }}</b></li>
+                        <li><hr></li>
+                        <li><b>{{ $client->roles->role }}</b></li>
+                        <li><b>@if(!empty($client->tent)) {{ $client->tent }}, {{ $client->field }} @else Slaapt elders @endif</b></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3" style="text-align: center">
+                    {!! QrCode::size(150)->generate(Auth::user()->code) !!}
+                </div>
+
+                <p style="color: red;">Feature toevoegen: *vlaggetjes bij land</p>
                 <br><br>
             </div>
 
-            <div class="container col-sm-1"></div>
+            {{--<div class="container col-sm-1"></div>--}}
 
-            <div class="panel panel-default col-sm-5">
-                <br>
-                @if((!empty($client->allergies)) OR (!empty($client->diets)))
-                    <div class="alert alert-warning" role="alert">Let op! {{ $client->name }} heeft speciale wensen.</div>
-                @endif
-                <h3>Allergiën</h3>
-                @if(!empty($client->allergies))
-                    <ul>
-                        <li><h4><span class="label label-info">{{ $client->allergies}}</span></h4></li>
-                    </ul>
-                @else
-                    <ul>
-                        <li>Geen allergiën</li>
-                    </ul>
-                @endif
-                <h3>Dieëten</h3>
-                @if(!empty($client->diets))
-                    <ul>
-                        <li><h4><span class="label label-info">{{ $client->diets }}</span></h4></li>
-                    </ul>
-                @else
-                    <ul>
-                        <li>Geen dieet</li>
-                    </ul>
-                @endif
-                <br>
+            <div class="col-sm-4">
+                <div class="panel panel-default col-sm-12">
+
+                    @if((!empty($client->allergies)) OR (!empty($client->diets)))
+                        <div class="alert alert-warning" role="alert">Let op! {{ $client->name }} heeft speciale wensen.</div>
+                    @endif
+
+                    <h3>Allergiën</h3>
+                    <hr>
+
+                    @if(!empty($client->allergies))
+                        <ul>
+                            <li><h4><span class="label label-info">{{ $client->allergies}}</span></h4></li>
+                        </ul>
+                    @else
+                        <ul>
+                            <li>Geen allergiën</li>
+                        </ul>
+                    @endif
+
+                    <h3>Dieëten</h3>
+                    <hr>
+
+                    @if(!empty($client->diets))
+                        <ul>
+                            <li><h4><span class="label label-info">{{ $client->diets }}</span></h4></li>
+                        </ul>
+                    @else
+                        <ul>
+                            <li>Geen dieet</li>
+                        </ul>
+                    @endif
+
+                    <br>
+                </div>
+
+                <div class="panel panel-default col-sm-12 col-md-12">
+                    <h3>Beheer</h3>
+                    <hr>
+                    <button type="button" class="btn btn-primary" style="width: 100%"><i class="fa fa-cog" aria-hidden="true"></i> Gegevens wijzigen</button><br><br>
+                    <button type="button" class="btn btn-success" style="width: 100%"><i class="fa fa-plus" aria-hidden="true"></i> Nieuwe maaltijd toevoegen</button><br>
+                    <br><br>
+                </div>
             </div>
         </div>
     </div>

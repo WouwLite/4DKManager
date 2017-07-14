@@ -17,11 +17,10 @@ class OrganisationMiddleware
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check() && (Auth::user()->function == 'organisatie' OR Auth::user()->admin == 1)) {
+        if (Auth::guard($guard)->check() && (Auth::user()->function == 'organisatie' OR Auth::user()->admin == 1) && Auth::user()->isApproved == 1) {
             return $next($request);
         } else {
-            return redirect('/login');
-//            return redirect('/request/permission');
+            return redirect('error');
         }
     }
 }

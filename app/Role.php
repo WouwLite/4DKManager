@@ -11,8 +11,7 @@ class Role extends Model
 //        return $this->belongsTo('App\Client');
 //    }
 
-    public function client()
-    {
+    public function client() {
         return $this->hasMany('App\Client');
     }
 }

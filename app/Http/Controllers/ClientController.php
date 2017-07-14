@@ -25,7 +25,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return 'Create';
+        return view('modules/clients/create');
     }
 
     /**
@@ -36,7 +36,8 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        return 'Store';
+        dd(request()->all());
+        // Dump all data for debugging
     }
 
     /**

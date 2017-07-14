@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Scouting 4DaagseKamp
+                    {{ config('app.name', 'Scoutroam Passpoint') }}
                 </div>
 
                 <div class="links">

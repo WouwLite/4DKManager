@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('error', function () {
+   return view('layouts.unauthorized-error-return');
+});
+
 //
 // Error logging and bug tracking
 //
@@ -108,6 +112,10 @@ Route::group(['prefix' => 'wireless'], function () {
 
 Route::group(['middleware' => 'admin'], function() {
     Route::group(['prefix' => 'IT'], function () {
+        Route::get('wiki', function () {
+            return redirect('//wwiki.nl');
+        });
+
         // Add IT dashboard
         Route::group(['prefix' => 'network'], function () {
             Route::get('dashboard', 'NetworkController@index');
@@ -153,6 +161,7 @@ Route::group(['middleware' => 'organisation'], function() {
             Route::get('/', 'ClientController@index');
             Route::get('show/{code}', 'ClientController@show');
             Route::get('create', 'ClientController@create');
+            Route::post('/', 'ClientController@store');
         });
 
         // Butterfly Badge Module
@@ -169,6 +178,8 @@ Route::group(['middleware' => 'organisation'], function() {
             Route::get('client/{id}', 'MealController@client');
             Route::get('client', 'MealController@redirect'); // Just a simple redirect
             Route::get('update', 'MealController@update');
+            Route::patch('/', 'MealController@updateBreakfast');
+
         });
 
         // Wakeservice Module
