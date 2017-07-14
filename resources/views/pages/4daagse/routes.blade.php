@@ -23,5 +23,7 @@
     @if(Auth::user()->admin == 1)
         <p>Map with route to START and API public transportation</p>
         <h1>Plattegrond met route naar start. Overzicht (of shortcuts) naar OV mogelijkheden. etc.</h1>
+        <p>https://github.com/Edofre/laravel-ns-api</p><br>
+        <p>http://www.ovradar.nl/</p><bR>
     @endif
 @stop
