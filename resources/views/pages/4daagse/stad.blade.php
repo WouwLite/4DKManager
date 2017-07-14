@@ -18,6 +18,6 @@
     <br><br>
     @include('includes/4Droutes-buttons')
     <br><br>
-    <strong>@{{ PLACEHOLDER }}</strong>
-    <img src="/img/plattegrond.png" style="max-width: 100%">
+    <h1>4Daagse Feesten</h1>
+    <img src="/img/plattegrond-4df.jpg" style="max-width: 100%">
 @stop
