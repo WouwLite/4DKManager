@@ -19,5 +19,6 @@
     @include('includes/4Droutes-buttons')
     <br><br>
     <h1>4Daagse Feesten</h1>
-    <img src="/img/plattegrond-4df.jpg" style="max-width: 100%">
+    <img src="/img/plattegrond-4df.jpg" style="max-width: 100%"><br>
+    <img src="/img/plattegrond-4df-info.png" style="max-width: 100%"><br>
 @stop
