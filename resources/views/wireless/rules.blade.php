@@ -31,9 +31,11 @@
             <center>
                 <div class="list-group center" style="max-width: 90%;">
                     <button type="button" class="list-group-item">Scoutroam is niet verantwoordelijk voor enig verlies van informatie of schade aan uw apparatuur als gevolg van het gebruik van het netwerk. De gebruiker blijft verantwoordelijk voor de veiligheid van zijn apparatuur, laptopconfiguraties, verwijderingen van beveiliging of wijzigingen aan bestanden als gevolg van het gebruik van het netwerk.</button>
-                    <button type="button" class="list-group-item">Het is niet toegestaan informatie met een illegale aard over ons netwerk te versturen.</button>
+                    <button type="button" class="list-group-item">Het is niet toegestaan informatie met een illegale aard over ons netwerk te versturen of bewust te ontvangen.</button>
                     <button type="button" class="list-group-item">Scoutroam heeft het recht het netwerk op ieder moment te deactiveren, om onderhoud te verrichten en om gelijktijdig gebruik te verdelen.</button>
                     <button type="button" class="list-group-item">Scoutroam heeft ook het recht een gebruiker van het netwerk te verwijderen indien hij zich niet houdt aan de spelregels in dit reglement.</button>
+                    <button type="button" class="list-group-item">De netwerkverbinding is beperkt, ga niet streamen (v.b. Netflix en Youtube).</button>
+                    <button type="button" class="list-group-item">Schakel automatische updates uit! Ook van uw telefoon (Android & IOS)!</button>
                     <button type="button" class="list-group-item">Scoutroam kan informatie verzamelen over uw surfgedrag ten behoeve van analytische doeleinden en beheer van het netwerk. Er worden geen persoonlijke gegevens bewaard.</button>
                 </div>
                 <br>
@@ -43,7 +45,7 @@
             </center>
 
             @if(Auth::user() == true)
-                <button type="button" class="btn btn-primary btn-lg" onclick="goBack()" style="min-width: 35%;">Terug</button> <a type="button" class="btn btn-default btn-lg" href="mailto://beheer@scoutroam.org" style="min-width: 15%"><span class="fa fa-envelope" aria-hidden="true"></span> Contact</a>
+                <button type="button" class="btn btn-primary btn-lg" onclick="goBack()" style="min-width: 35%;">Terug</button> <a type="button" class="btn btn-default btn-lg" href="/home" style="min-width: 15%"><span class="fa fa-dashboard" aria-hidden="true"></span> Dashboard</a>
             @else
                 <button type="button" class="btn btn-primary btn-lg" onclick="goBack()" style="min-width: 35%;">Terug</button> <a type="button" class="btn btn-default btn-lg" href="mailto://beheer@scoutroam.org" style="min-width: 15%"><span class="fa fa-envelope" aria-hidden="true"></span> Contact</a>
             @endif

@@ -9,6 +9,10 @@
         <li class="active">Overview</li>
     </ol>
     <h1>@include('includes/goBack') Meals Overview</h1>
+
+    @php
+        $currentDate = date("l j F Y");
+    @endphp
 @stop
 
 @section('content')
@@ -22,13 +26,12 @@
 
         @include('includes/meal-buttons')
 
-        <h4>Overzicht alle maaltijden</h4>
+        <br><br>
 
+        <h2>Overzicht alle maaltijden</h2>
         <hr>
-
-        @php
-            $currentDate = date("l j F Y");
-        @endphp
+        <!-- will be used to show any messages -->
+        @include('includes.messages')
 
         <table class="table table-striped">
             <thead>
@@ -53,12 +56,7 @@
                             @if($meal->breakfast == 0)
                                 <button type="button" id="breakfastButtonTimes" class="btn btn-default" disabled><i class="fa fa-times fa-2x text-danger"></i></button>
                             @elseif($meal->breakfast == 1)
-                                <form method="PATCH" action="/dashboard/meals/{$id}">
-                                    {{ csrf_field() }}
-{{--                                        <input type="hidden" name="id" value="{{ $meal->client->id }}" >--}}
-                                    {{--<button type="submit">Release </button>--}}
-                                    <button type="submit" id="breakfast" name="breakfast" value="2" class="btn btn-default"><i class="fa fa-check fa-2x text-success"></i></button>
-                                </form>
+                                <button type="submit" id="updateBreakfast" name="updateBreakfast" value="2" class="btn btn-default"><i class="fa fa-check fa-2x text-success"></i></button>
 
                                 {{--<button type="button" id="breakfastButtonCheck" class="btn btn-default"><i class="fa fa-check fa-2x text-success"></i></button>--}}
                             @elseif($meal->breakfast == 2)

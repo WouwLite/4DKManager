@@ -8,18 +8,23 @@
         <li> <a href="/error">Error</a></li>
         <li class="active">Unauthorized</li>
     </ol>
-    <h1>@include('includes/goBack') Error: Unauthorized!</h1>
+    <h1>@include('includes/goBack') <i class="fa fa-user-times"></i> Unauthorized</h1>
 @stop
 
 @section('content')
 
+    {{-- Temp overwrite for local development --}}
+    <head>
+        <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+    </head>
+
     <div class="container-fluid">
-        <h2>Ohoh, u heeft geen rechten!</h2>
-        <br>
-        <br>
-        U heeft niet de juiste rechten om deze pagina te mogen bekijken. Neem contact op met de beheerder op <a href="mailto:beheer@4dk.nl">beheer@scoutroam.org</a>.
-        <br>
-        <img src="http://cdn.wouwlite.eu/4dk.nl/images/notAuthorizedMeme.jpg">
+        {{--<h2>Geblokkeerd</h2>--}}
+        <div class="alert alert-danger" role="alert">
+            <strong><i class="fa fa-user-times"></i> Geblokkeerd</strong> U heeft niet de juiste rechten om deze pagina te mogen bekijken. Neem contact op met de beheerder op <a href="mailto:beheer@4dk.nl">beheer@scoutroam.org</a>
+        </div>
+        <br><br>
+        <img src="/img/notAuthorizedMeme.jpg" style="max-width: 30%">
     </div>
 
 @stop

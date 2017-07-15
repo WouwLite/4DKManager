@@ -66,7 +66,7 @@
                     {!! QrCode::size(150)->generate(Auth::user()->code) !!}
                 </div>
 
-                <p style="color: red;">Feature toevoegen: *vlaggetjes bij land</p>
+                <p style="color: red;">Feature toevoegen: *vlaggetjes bij land (famfam icons)</p>
                 <br><br>
             </div>
 

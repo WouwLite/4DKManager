@@ -17,16 +17,20 @@
     </head>
 
     {{-- Add navbar --}}
-    <form action="" class="navbar-form navbar-right" role="search">
-        <div class="input-group">
-            <input type="text" name="search" id="search" class="form-control" placeholder="Zoeken...">
-            <span class="input-group-btn">
+    <div class="navbar navbar-right">
+        <form method="POST" action="" class="navbar-form navbar-right" role="search">
+            {{ csrf_field() }}
+            <div class="input-group">
+                <input type="text" name="search" id="search" class="form-control" placeholder="Zoeken...">
+                <span class="input-group-btn">
                 <button class="btn btn-default" type="submit">
                     <i class="fa fa-search"></i>
                 </button>
             </span>
-        </div>
-    </form>
+            </div>
+        </form>
+    </div>
+
     {{--{{ Form::close() }}--}}
 
     {{-- Add table to show users --}}
@@ -54,8 +58,8 @@
                         <span class="label label-danger">{{ $client->roles->role }}</span>
                     @elseif($client->roles->id >= 4 && $client->roles->id <= 49)
                         <span class="label label-info">{{ $client->roles->role }}</span>
-                    @else
-                        {{ $client->roles->role }}
+                    @elseif($client->roles->id >= 50)
+                        <span class="label label-default">{{ $client->roles->role }}</span>
                     @endif
                 </td>
                 <td>{{ $client->tent }}</td>

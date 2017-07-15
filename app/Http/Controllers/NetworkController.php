@@ -84,12 +84,12 @@ class NetworkController extends Controller
     public function destroy($id)
     {
         // delete
-        $networks = Networks::find($id);
+        $networks = Network::find($id);
         $networks->delete();
 
         // redirect
-        Session::flash('message', 'Successfully deleted the device!');
-        return Redirect::to('IT.index');
+//        Session::flash('message', 'Successfully deleted the device!');
+        return redirect()->back()->with('message', 'Network device is successfully deleted!');
     }
 
     /*

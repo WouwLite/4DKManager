@@ -72,7 +72,8 @@ Route::group(['prefix' => 'pages'], function () {
     // Custom event specific routes
     Route::group(['prefix' => '4daagse'], function () {
         Route::get('routes', function () {
-            return view('pages.4daagse.routes');
+//            return view('pages.4daagse.routes');
+            return redirect('pages/4daagse/dinsdag');
         });
         Route::get('dinsdag', function () {
             return view('pages.4daagse.dinsdag');
@@ -103,41 +104,6 @@ Route::group(['prefix' => 'wireless'], function () {
     });
     Route::get('rules', function () {
         return view('wireless.rules');
-    });
-});
-
-//
-// Administration pages
-//
-
-Route::group(['middleware' => 'admin'], function() {
-    Route::group(['prefix' => 'IT'], function () {
-        Route::get('wiki', function () {
-            return redirect('//wwiki.nl');
-        });
-
-        // Add IT dashboard
-        Route::group(['prefix' => 'network'], function () {
-            Route::get('dashboard', 'NetworkController@index');
-            Route::get('show/{code}', 'NetworkController@show');
-            Route::get('create', 'NetworkController@create');
-            Route::get('topology', 'NetworkController@topology');
-            Route::get('byod', 'NetworkController@BringYourOwnDevice');
-
-            Route::group(['prefix' => 'map'], function () {
-               Route::get('indoor', 'NetworkController@map_indoor');
-               Route::get('outdoor', 'NetworkController@map_outdoor');
-            });
-        });
-
-
-        Route::get('old', function () {
-            return view('IT.index');
-        });
-
-        Route::get('NOC', function () {
-            return view('IT.noc');
-        });
     });
 });
 
@@ -177,8 +143,8 @@ Route::group(['middleware' => 'organisation'], function() {
             Route::get('today', 'MealController@today');
             Route::get('client/{id}', 'MealController@client');
             Route::get('client', 'MealController@redirect'); // Just a simple redirect
-            Route::get('update', 'MealController@update');
-            Route::patch('/', 'MealController@updateBreakfast');
+//            Route::get('update', 'MealController@update');
+            Route::patch('updateBreakfast', 'MealController@updateBreakfast');
 
         });
 
@@ -190,6 +156,38 @@ Route::group(['middleware' => 'organisation'], function() {
                 Route::get('create', 'WakeServiceController@create');
                 Route::get('edit', 'WakeServiceController@edit');
             });
+        });
+    });
+});
+
+//
+// Administration pages
+//
+
+Route::group(['middleware' => 'admin'], function() {
+    Route::group(['prefix' => 'IT'], function () {
+        Route::get('wiki', function () {
+            return redirect('//wwiki.nl');
+        });
+
+        // Add IT dashboard
+        Route::group(['prefix' => 'network'], function () {
+            Route::get('dashboard', 'NetworkController@index');
+            Route::get('show/{code}', 'NetworkController@show');
+            Route::get('create', 'NetworkController@create');
+            Route::get('update', 'NetworkController@update');
+            Route::get('{id}/delete', 'NetworkController@destroy');
+            Route::get('topology', 'NetworkController@topology');
+            Route::get('byod', 'NetworkController@BringYourOwnDevice');
+
+            Route::group(['prefix' => 'map'], function () {
+                Route::get('indoor', 'NetworkController@map_indoor');
+                Route::get('outdoor', 'NetworkController@map_outdoor');
+            });
+        });
+
+        Route::get('NOC', function () {
+            return view('IT.noc');
         });
     });
 });

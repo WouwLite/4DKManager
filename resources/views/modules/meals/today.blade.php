@@ -42,7 +42,7 @@
                         <td>{{ $meal->client->code }}</td>
                         <td><b>{{ $meal->client->name }}</b></td>
                         <td>
-                            <form method="POST" action="update">
+                            <form method="POST" action="updateBreakfast">
                                 <input type="hidden" name="approve" value="2" >
                                 <input type="hidden" name="id" value="{{ $meal->id }}" >
                                 <button type="submit">Approve</button>
