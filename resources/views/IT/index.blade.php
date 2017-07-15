@@ -37,8 +37,8 @@
                 <th>Switch</th>
                 <th>Port</th>
                 <th>Location</th>
-                {{--<th>Channel</th>--}}
-                {{--<th>MAC</th>--}}
+                <th>Username</th>
+                <th>Password</th>
                 {{--<th>DNS</th>--}}
                 <th>DHCP</th>
                 <th></th>
@@ -65,8 +65,8 @@
                     @else
                         <td style="text-align: center"><span class="label label-primary">{{ $network->location }}</span></td>
                     @endif
-                    {{--<td>{{ $network->channel }}</td>--}}
-                    {{--<td>{{ $network->mac }}</td>--}}
+                    <td>{{ $network->username }}</td>
+                    <td>{{ $network->password }}</td>
                     {{--<td>{{ $network->dns }}</td>--}}
                     <td>{{ $network->dhcptype }}</td>
                     <td align="right">
@@ -92,5 +92,65 @@
                 @endforeach
             </tbody>
         </table>
+
+        <div class="row">
+            <h3>Switch SW-101</h3>
+
+            <table class="table table-bordered" style="background-color: white">
+                <thead>
+                <tr>
+                    {{--<th></th>--}}
+                    {{--<th></th>--}}
+                    {{--<th></th>--}}
+                    {{--<th></th>--}}
+                    {{--<th></th>--}}
+                    {{--<th></th>--}}
+                    {{--<th></th>--}}
+                    {{--<th></th>--}}
+                    {{--<th></th>--}}
+                    {{--<th></th>--}}
+                    {{--<th></th>--}}
+                    {{--<th></th>--}}
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    {{--@foreach()--}}
+                        {{--@if($network->port1 == )<td style="background-color: green"></td>@endif--}}
+                    {{--@endforeach--}}
+
+                    Als {port1} op switch 101 aanwezig is, kleur vak in, anders laat vak leeg en sla over.
+
+                        @if($network->switch1 == 1)<td style="background-color: green"></td>@endif
+                    @if($network->switch1 == 2)<td style="background-color: green"></td>@endif
+                    @if($network->switch1 == 3)<td style="background-color: green"></td>@endif
+                    @if($network->switch1 == 4)<td style="background-color: green"></td>@endif
+                    @if($network->switch1 == 5)<td style="background-color: green"></td>@endif
+                    @if($network->switch1 == 6)<td style="background-color: green"></td>@endif
+                    @if($network->switch1 == 7)<td style="background-color: green"></td>@endif
+                    @if($network->switch1 == 8)<td style="background-color: green"></td>@endif
+                    @if($network->switch1 == 9)<td style="background-color: green"></td>@endif
+                    @if($network->switch1 == 10)<td style="background-color: green"></td>@endif
+                    @if($network->switch1 == 11)<td style="background-color: green"></td>@endif
+                    @if($network->switch1 == 12)<td style="background-color: green"></td>@endif
+                </tr>
+                <tr>
+                    <td style="background-color: lightgreen">x</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="background-color: lightgreen">x</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="background-color: lightgreen">x</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
     </div>
 @stop
