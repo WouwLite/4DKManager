@@ -19,7 +19,7 @@
             @include('includes.IT-buttons')
             <br>
             <br>
-            <img src="//cdn.wouwlite.eu/4dk.nl/images/2017-4DK-TopologyNetwork.png" style="max-width: 100%;">
+            <img src="//cdn.wouwlite.eu/4dk.nl/images/2018-4DK-TopologyNetwork.png" style="max-width: 100%;">
         </div>
     @else
         @include('layouts.unauthorized-error-return')
